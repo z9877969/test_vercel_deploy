@@ -3,8 +3,8 @@ import React from "react";
 const WaterDailyNorma = ({ dailyNorm }) => {
   return (
     <div>
-      <h3>Денна норма води</h3>
-      <p>{dailyNorm} л</p>
+      <h3>My daily norma</h3>
+      <p>{dailyNorm} l</p>
     </div>
   );
 };
