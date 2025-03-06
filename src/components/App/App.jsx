@@ -1,15 +1,18 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import TrackerPage from "../../pages/TrackerPage/TrackerPage";
+
 import { useState } from "react";
 import "./App.module.css";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <div className="App">
-        <h1>Hello, World!</h1>
-        <p>Welcome to the H2OFlow team 4 React app.</p>
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/tracker" element={<TrackerPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
