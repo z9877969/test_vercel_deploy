@@ -1,3 +1,63 @@
+/* Main styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #2f2f2f;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* General container styles */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 24px 16px 16px;
+  background: #f0eff4;
+  border-radius: 30px;
+}
+
+/* Mobile - default styling for screens 320px and up */
+@media (max-width: 374.98px) {
+  .container {
+    padding: 24px 16px 16px;
+    width: 100%;
+  }
+}
+
+/* Tablet (375px and up) */
+@media (min-width: 375px) {
+  .container {
+    width: 375px;
+    padding: 32px;
+  }
+}
+
+/* Tablet-large / Desktop (768px and up) */
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 32px;
+  }
+}
+
+/* Desktop (1440px and up) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 672px;
+    gap: 0px;
+  }
+}
+
 /* reset styles */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
