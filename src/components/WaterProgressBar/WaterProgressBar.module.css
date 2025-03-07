@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Poppins-bold";
+  src: url("../../../fonts/Poppinsbold.woff") format("woff");
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../../fonts/Poppinsregular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  width: 198px;
+  height: 70px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 15px;
+  padding: 12px;
+  margin: auto;
+  margin-bottom: 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.textH3 {
+  font-family: "Poppins-bold", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.scaleContainer {
+  height: fit-content;
+}
+
+.scaleText {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  color: rgba(47, 47, 47, 0.6);
+  font-weight: normal;
+}

@@ -4,7 +4,6 @@ import WaterMainInfo from "../../components/WaterMainInfo/WaterMainInfo";
 const TrackerPage = () => {
   return (
     <div>
-      <h1>Трекер води</h1>
       <WaterMainInfo />
     </div>
   );

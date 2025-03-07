@@ -19,12 +19,15 @@ const WaterMainInfo = () => {
   };
 
   return (
-    <div className={css.wrapper}>
-      <WaterDailyNorma dailyNorm={dailyNorm} />
-      <WaterProgressBar consumed={consumed} dailyNorm={dailyNorm} />
-      <AddWaterBtn onClick={handleAddWaterClick} />
-      {isModalOpen && <WaterModal onClose={handleCloseModal} />}
-    </div>
+    <section className={css.sectionWrapper}>
+      <div className={css.wrapper}>
+        <h2 className={css.logo}>AQUATRACK</h2>
+        <WaterDailyNorma dailyNorm={dailyNorm} />
+        <WaterProgressBar consumed={consumed} dailyNorm={dailyNorm} />
+        <AddWaterBtn onClick={handleAddWaterClick} />
+        {isModalOpen && <WaterModal onClose={handleCloseModal} />}
+      </div>
+    </section>
   );
 };
 
