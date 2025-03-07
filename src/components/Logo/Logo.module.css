@@ -1,0 +1,16 @@
+.logoTitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11;
+  letter-spacing: -0.01em;
+  color: #323F47;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .logoTitle {
+    font-size: 24px;
+  }
+}
