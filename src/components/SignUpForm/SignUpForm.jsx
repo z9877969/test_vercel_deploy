@@ -4,6 +4,10 @@ import { useForm } from "react-hook-form";
 import s from "./SignUpForm.module.css";
 import clsx from "clsx";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useDispatch } from "react-redux";
+import { register as authUser } from "../../redux/auth/operations.js";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 
 export const AuthFormContainer = ({ children, className }) => {
   return <div className={clsx(s.container, className)}>{children}</div>;
@@ -11,13 +15,16 @@ export const AuthFormContainer = ({ children, className }) => {
 export const spritePath = "/sprite.svg";
 
 const SignUpForm = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(signUpValidationSchema),
@@ -25,6 +32,30 @@ const SignUpForm = () => {
   });
   const onSubmit = async (data) => {
     const { email, password } = data;
+    const correctEmail = email.toLowerCase();
+    dispatch(authUser({ email: correctEmail, password }))
+      .unwrap()
+      .then(() => {
+        reset();
+        toast.success("Registration was successful.", {
+          duration: 2000,
+          position: "top-center",
+          icon: "👏",
+        });
+        navigate("/tracker");
+      })
+      .catch((error) => {
+        if (error === 409) {
+          toast.error("User have already exists");
+        } else if (error === 400) {
+          toast.error("Please enter a valid email");
+        } else {
+          toast.error("Sorry, registration is failed", {
+            duration: 2000,
+            position: "top-center",
+          });
+        }
+      });
   };
 
   const signUpValidationSchema = Yup.object({
@@ -128,9 +159,7 @@ const SignUpForm = () => {
         </form>
         <div className={s.afterSignUpBox}>
           <p className={s.afterSignUpText}> Already have an account?</p>
-          <a className={s.link} href="signIn">
-            Sign In
-          </a>
+          <Link className={s.link} to="/signin"></Link>
         </div>
       </div>
     </AuthFormContainer>
