@@ -1,14 +1,44 @@
 /* Main styles */
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppinsregular.woff2") format("woff2"),
+    url("../fonts/Poppinsregular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppinsbold.woff2") format("woff2"),
+    url("../fonts/Poppinsbold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  /* Кольори */
+  --main-text-color: #2f2f2f;
+  --grey-color: #323f47;
+  --accent-color: #9be1a0;
+  --background-color: #f0eff4;
+  --main-white-color: #ffffff;
+
+  /* Шрифти */
+  --font-family: "Poppins", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  color: #2f2f2f;
-  background-color: #ffffff;
-  overflow-x: hidden;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  color: var(--main-text-color);
+  background-color: var(--main-white-color);
 }
 
 body.modal-open {
