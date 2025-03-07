@@ -1,0 +1,122 @@
+.advantages-section {
+  width: 100%;
+  min-height: 353px;
+  background-image: image-set(
+    url("/public/img/main-mob.jpg")1x,
+    url("/public/img/main-mob@2x.jpg")2x
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.advantages-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 14px;
+  left: 16px;
+}
+
+.info-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+.highlight {
+  color: #46a758;
+}
+
+.userImages {
+  display: flex;
+}
+
+.user-images img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -5px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.habit-drive {
+  background: black;
+  color: white;
+}
+
+.view-stats {
+  background: #46a758;
+  color: white;
+}
+
+.personal-rate {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (min-width: 375px) {
+  .advantages-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) {
+  .advantages-section {
+    padding: 40px;
+    background-image: image-set(
+    url("/public/img/main-tablet.jpg")1x,
+    url("/public/img/main-tablet@2x.jpg")2x
+  );
+  }
+
+  .info-box {
+    font-size: 22px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .advantages-section {
+    min-height: 400px;
+    background-image: image-set(
+    url("/public/img/main-desktop.jpg")1x,
+    url("/public/img/main-desktop@2x.jpg")2x
+  );
+  }
+}
