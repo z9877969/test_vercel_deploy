@@ -4,11 +4,13 @@ import TrackerPage from "../../pages/TrackerPage/TrackerPage";
 
 import { useState } from "react";
 import "./App.module.css";
+import HomePage from "../../pages/HomePage/HomePage.jsx";
 
 const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/tracker" element={<TrackerPage />} />
       </Routes>
     </Router>
