@@ -29,4 +29,8 @@
     background-color: transparent;
     fill: #2f2f2f;
   }
-  
+  .svgClose {
+    fill: #2f2f2f;
+    width: 28px;
+    height: 28px;
+  }
