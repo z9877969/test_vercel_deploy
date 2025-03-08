@@ -48,8 +48,16 @@ const SignInForm = () => {
         navigate("/tracker");
       })
       .catch((error) => {
-        if (error?.response?.status === 409) {
-          toast.error("User already exists");
+        if (error?.response?.status === 401) {
+          toast.error("Unauthorized user", {
+            duration: 2000,
+            position: "top-center",
+          });
+        } else if (error?.response?.status === 403) {
+          toast.error("Access forbidden", {
+            duration: 2000,
+            position: "top-center",
+          });
         } else {
           toast.error("Sorry, login failed. Please try again.", {
             duration: 2000,

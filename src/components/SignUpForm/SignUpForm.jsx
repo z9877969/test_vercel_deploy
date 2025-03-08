@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import s from "./SignUpForm.module.css";
@@ -55,9 +54,15 @@ const SignUpForm = () => {
       })
       .catch((error) => {
         if (error?.response?.status === 409) {
-          toast.error("User has already exists");
+          toast.error("User has already exists", {
+            duration: 2000,
+            position: "top-center",
+          });
         } else if (error?.response?.status === 400) {
-          toast.error("Please enter a valid email");
+          toast.error("Please enter a valid email", {
+            duration: 2000,
+            position: "top-center",
+          });
         } else {
           toast.error("Sorry, registration failed", {
             duration: 2000,
