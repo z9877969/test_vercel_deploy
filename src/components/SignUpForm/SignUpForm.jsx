@@ -20,7 +20,7 @@ const signUpValidationSchema = Yup.object({
 
   password: Yup.string()
     .min(8, "Your password must have at least 8 characters.")
-    .max(30, "Your password must have at most 30 characters")
+    .max(40, "Your password must have at most 40 characters")
     .required("Password is required"),
 
   repeatPassword: Yup.string()
