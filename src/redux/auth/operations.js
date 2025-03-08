@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const userAPI = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://h2oflow-team4-backend.onrender.com",
   withCredentials: true,
 });
 export const setAuthHeader = (token) => {
