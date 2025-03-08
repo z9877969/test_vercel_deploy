@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 .container {
   background-color: #f0eff4;
   border-radius: 32px;
@@ -8,6 +13,7 @@
   margin-bottom: 170px;
 }
 .signUpTitle {
+  font-family: "Poppins";
   font-weight: 700;
   font-size: 32px;
   line-height: 100%;
@@ -21,6 +27,7 @@
   gap: 16px;
 }
 .signUpLabel {
+  font-family: "Poppins";
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -42,6 +49,7 @@
   text-align: left;
 }
 .input::placeholder {
+  font-family: "Poppins";
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
@@ -106,6 +114,7 @@
   color: rgba(47, 47, 47, 0.5);
 }
 .link {
+  font-family: "Poppins";
   font-weight: 700;
   text-decoration: underline;
   text-decoration-skip-ink: none;
