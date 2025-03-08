@@ -1,6 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { logIn, register } from "./operations.js";
+
+const initialState = {
+  user: {
+    name: null,
+    email: null,
+  },
+  isLoggedIn: false,
+  token: null,
+  loading: false,
+  error: null,
+};
+
 import { initialState } from "../initialState.js";
+
 const handleAuthState = (state, status, action = null) => {
   switch (status) {
     case "pending":
