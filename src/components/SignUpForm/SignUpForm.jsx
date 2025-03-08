@@ -1,4 +1,4 @@
-import * as Yup from "yup";
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import s from "./SignUpForm.module.css";
@@ -8,25 +8,7 @@ import { useDispatch } from "react-redux";
 import { register as authUser } from "../../redux/auth/operations.js";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-
-const signUpValidationSchema = Yup.object({
-  email: Yup.string()
-    .email("Invalid email address")
-    .matches(
-      /^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
-      "An email address must end with a valid domain (e.g., .com, .net)."
-    )
-    .required("Email is required"),
-
-  password: Yup.string()
-    .min(8, "Your password must have at least 8 characters.")
-    .max(40, "Your password must have at most 40 characters")
-    .required("Password is required"),
-
-  repeatPassword: Yup.string()
-    .oneOf([Yup.ref("password"), null], "Passwords must match")
-    .required("Please repeat your password"),
-});
+import { signUpValidationSchema } from "../../validationSchemas/authValidation.js";
 
 export const AuthFormContainer = ({ children, className }) => {
   return <div className={clsx(s.container, className)}>{children}</div>;
