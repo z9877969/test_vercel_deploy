@@ -8,7 +8,7 @@ import css from "./WaterMainInfo.module.css";
 const WaterMainInfo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dailyNorm = 1.5;
-  const consumed = 0.7;
+  const consumed = 0.8;
 
   const handleAddWaterClick = () => {
     setIsModalOpen(true);
