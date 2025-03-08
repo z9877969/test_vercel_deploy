@@ -8,6 +8,7 @@ import HomePage from "../../pages/HomePage/HomePage.jsx";
 import SignUpPage from "../../pages/SignUpPage/SignUpPage.jsx";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store.js";
+import SignInPage from "../../pages/SignInPage/SignInPage.jsx";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/tracker" element={<TrackerPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<SignInPage />} />
         </Routes>
       </Router>
     </Provider>
