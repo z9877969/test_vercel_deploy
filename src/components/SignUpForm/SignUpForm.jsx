@@ -72,9 +72,9 @@ const SignUpForm = () => {
         navigate("/tracker");
       })
       .catch((error) => {
-        if (error === 409) {
+        if (error?.response?.status === 409) {
           toast.error("User has already exists");
-        } else if (error === 400) {
+        } else if (error?.response?.status === 400) {
           toast.error("Please enter a valid email");
         } else {
           toast.error("Sorry, registration failed", {
