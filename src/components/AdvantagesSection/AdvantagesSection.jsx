@@ -8,7 +8,7 @@ const AdvantagesSection = () => {
   useEffect(() => {
     const fetchTotalUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/users/count");
+        const response = await axios.get("http://localhost:5173/users/count");
         setTotalUsers(response.data.count);
       } catch (error) {
         console.error("Error fetching total users:", error);
