@@ -20,3 +20,15 @@ export const register = createAsyncThunk(
     }
   }
 );
+export const logIn = createAsyncThunk(
+  "user/login",
+  async (userData, thunkAPI) => {
+    try {
+      const response = await userAPI.post("/login", userData);
+      setAuthHeader(response.data.data.accessToken);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.status);
+    }
+  }
+);
