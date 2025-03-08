@@ -12,6 +12,8 @@ const initialState = {
   error: null,
 };
 
+import { initialState } from "../initialState.js";
+
 const handleAuthState = (state, status, action = null) => {
   switch (status) {
     case "pending":
