@@ -34,13 +34,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-regular);
-  color: var(--main-text-color);
-  background-color: var(--main-white-color);
-}
-
 body.modal-open {
   overflow: hidden;
 }
@@ -218,4 +211,11 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  color: var(--main-text-color);
+  background-color: var(--main-white-color);
 }
