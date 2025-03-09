@@ -34,3 +34,11 @@
   font-weight: bold;
   font-size: 14px;
 }
+
+@media (min-width: 768px) {
+  .normContainer {
+    width: 129px;
+    height: 78px;
+    margin-bottom: 87px;
+  }
+}

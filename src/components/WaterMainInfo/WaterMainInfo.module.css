@@ -14,7 +14,9 @@
 
 .sectionWrapper {
   padding: 16px;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .wrapper {
@@ -23,7 +25,6 @@
   display: flex;
   flex-direction: column;
   padding: 24px 16px 32px;
-
   background-image: url("/img/bottle-mob.png"); /* Абсолютний шлях */
   background-size: auto;
   background-position: center top 50px;
@@ -37,3 +38,41 @@
   font-size: 18px;
   margin-bottom: 78px;
 }
+
+@media (min-width: 375px) {
+  .sectionWrapper {
+    max-width: 375px;
+  }
+
+  .wrapper {
+    padding: 24px 20px 32px;
+    background-position: center top 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sectionWrapper {
+    max-width: 768px;
+  }
+  .wrapper {
+    padding: 32px 32px 64px;
+    background-image: url("/public/img/bottle-tablet.png");
+    background-position: center top 70px;
+  }
+
+  .logo {
+    font-size: 24px;
+    margin-bottom: 101px;
+  }
+}
+
+/* @media (min-width: 1440px) {
+    .sectionWrapper {
+        max-width: 1440px;
+    }
+
+    .wrapper {
+        padding: ;
+
+    }
+} */

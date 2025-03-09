@@ -42,3 +42,16 @@
   color: rgba(47, 47, 47, 0.6);
   font-weight: normal;
 }
+
+@media (min-width: 768px) {
+  .container {
+    width: 295px;
+    height: 106px;
+    padding: 20px;
+    margin-bottom: 26px;
+  }
+
+  .textH3 {
+    font-size: 15px;
+  }
+}
