@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SignInPage from "../../pages/SignInPage/SignInPage.jsx";
 import { selectIsLoggedIn, selectToken } from "../../redux/user/selectors.js";
 import { refreshUser, setAuthHeader } from "../../redux/user/operations.js";
+import SharedLayout from "../../../SharedLayout.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -26,10 +27,12 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/tracker" element={<TrackerPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="tracker" element={<TrackerPage />} />
+          <Route path="signup" element={<SignUpPage />} />
+          <Route path="signin" element={<SignInPage />} />
+        </Route>
       </Routes>
     </Router>
   );

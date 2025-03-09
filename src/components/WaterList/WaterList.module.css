@@ -1,0 +1,7 @@
+.waterList {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
