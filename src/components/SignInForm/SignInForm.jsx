@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations.js";
 import toast from "react-hot-toast";
-import { AuthFormContainer } from "../SignUpForm/SignUpForm.jsx"; // Перевірте шлях імпорту
+import { AuthFormContainer } from "../SignUpForm/SignUpForm.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { signInValidationSchema } from "../../validationSchemas/authValidation.js";
 
