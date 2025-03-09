@@ -9,12 +9,12 @@ const WelcomeSection = () => {
       <p className={s.welcomeText}>Record daily water intake and track</p>
       <h1 className={s.welcomeTitle}>Water consumption tracker</h1>
       <nav className={s.welcomeBtn}>
-        <Link to="/tracker" className={s.btnTracker}>
+        <Link to="/signup" className={s.btnTracker}>
           Try tracker
         </Link>
-        <a href="" className={s.btnSignIn}>
+        <Link to="/signin" className={s.btnSignIn}>
           Sign In
-        </a>
+        </Link>
       </nav>
     </div>
   );

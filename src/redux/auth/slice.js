@@ -1,15 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register } from "./operations.js";
-
-const initialState = {
-  user: {
-    name: null,
-    email: null,
-  },
-  isLoggedIn: false,
-  token: null,
-  loading: false,
-  error: null,
+import { logIn, register } from "./operations.js";
+import { initialState } from "../initialState.js";
+const handleAuthState = (state, status, action = null) => {
+  switch (status) {
+    case "pending":
+      state.loading = true;
+      state.error = null;
+      state.isLoggedIn = false;
+      break;
+    case "fulfilled":
+      state.user = action.payload.data.user;
+      state.token = action.payload.data.accessToken;
+      state.isLoggedIn = true;
+      state.loading = false;
+      state.error = null;
+      break;
+    case "rejected":
+      state.token = null;
+      state.isLoggedIn = false;
+      state.loading = false;
+      state.error = action.payload;
+      break;
+    default:
+      return state;
+  }
 };
 
 const authSlice = createSlice({
@@ -22,25 +36,24 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-        state.isLoggedIn = false;
-      })
-      .addCase(register.fulfilled, (state, action) => {
-        state.user = action.payload.data.user;
-        state.token = action.payload.data.accessToken;
-        state.isLoggedIn = true;
-        state.loading = false;
-        state.error = null;
-      })
-      .addCase(register.rejected, (state, action) => {
-        state.token = null;
-        state.isLoggedIn = false;
-        state.loading = false;
-        state.error = action.payload;
-      });
+      .addCase(register.pending, (state) => handleAuthState(state, "pending"))
+      .addCase(register.fulfilled, (state, action) =>
+        handleAuthState(state, "fulfilled", action)
+      )
+      .addCase(register.rejected, (state, action) =>
+        handleAuthState(state, "rejected", action)
+      );
+
+    builder
+      .addCase(logIn.pending, (state) => handleAuthState(state, "pending"))
+      .addCase(logIn.fulfilled, (state, action) =>
+        handleAuthState(state, "fulfilled", action)
+      )
+      .addCase(logIn.rejected, (state, action) =>
+        handleAuthState(state, "rejected", action)
+      );
   },
 });
 
+export const { clearError } = authSlice.actions;
 export default authSlice.reducer;
