@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Poppins-bold";
+  src: url("../../../fonts/Poppinsbold.woff") format("woff");
+  font-weight: bold;
+  font-style: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  width: fit-content;
+  height: 46px;
+  border-radius: 30px;
+  padding: 14px 20px;
+  float: right;
+  background-color: #323f47;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.btnText {
+  font-family: "Poppins-bold", sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+.iconPlus {
+  width: 16px;
+  height: 16px;
+  fill: white;
+  margin-right: 8px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 18px 30px;
+    height: auto;
+  }
+
+  .btnText {
+    font-size: 16px;
+  }
+  .iconPlus {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+}

@@ -11,19 +11,19 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import authReducer from "./auth/slice.js";
+import userReducer from "./user/slice.js";
 
-const authPersistConfig = {
-  key: "auth",
+const userPersistConfig = {
+  key: "user",
   storage,
-  whitelist: ["token"],
+  whitelist: ["token", "userData"],
 };
 
-const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
+const persistedUserReducer = persistReducer(userPersistConfig, userReducer);
 
 export const store = configureStore({
   reducer: {
-    auth: persistedAuthReducer,
+    user: persistedUserReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

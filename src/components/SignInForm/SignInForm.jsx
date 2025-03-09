@@ -4,7 +4,7 @@ import s from "./SignInForm.module.css";
 import clsx from "clsx";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operations.js";
+import { logIn } from "../../redux/user/operations.js";
 import toast from "react-hot-toast";
 import { AuthFormContainer } from "../SignUpForm/SignUpForm.jsx";
 import { Link, useNavigate } from "react-router-dom";

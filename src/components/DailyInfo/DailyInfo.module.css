@@ -1,0 +1,35 @@
+.dailyInfo {
+  background: var(--background-color);
+  border-radius: 30px;
+  padding: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--grey-color);
+  color: var(--main-white-color);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.profile img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.todaySection {
+  margin-top: 16px;
+}
