@@ -48,13 +48,8 @@ const SignInForm = () => {
         navigate("/tracker");
       })
       .catch((error) => {
-        if (error?.response?.status === 401) {
+        if (error?.response?.data.message === "User not found") {
           toast.error("Unauthorized user", {
-            duration: 2000,
-            position: "top-center",
-          });
-        } else if (error?.response?.status === 403) {
-          toast.error("Access forbidden", {
             duration: 2000,
             position: "top-center",
           });
