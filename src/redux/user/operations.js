@@ -79,7 +79,7 @@ export const refreshUser = createAsyncThunk(
 );
 
 export const fetchUserProfile = createAsyncThunk(
-  "user/fetсhProfile",
+  "user/fetchProfile",
   async (_, thunkAPI) => {
     try {
       const response = await userAPI.get("/users");

@@ -1,7 +1,13 @@
+import { useState } from "react";
+import LogOutModal from "../LogOutModal/LogOutModal";
 import css from "./UserBarPopover.module.css";
 
 const UserBarPopover = () => {
-  const handleClick = () => {};
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = (e) => {
+    setIsOpen(true);
+  };
   return (
     <div className={css.userBarPopover}>
       <button className={css.setBut}>
@@ -16,6 +22,12 @@ const UserBarPopover = () => {
         </svg>
         Log out
       </button>
+      <LogOutModal
+        isOpen={isOpen}
+        onClose={() => {
+          setIsOpen(false);
+        }}
+      />
     </div>
   );
 };
