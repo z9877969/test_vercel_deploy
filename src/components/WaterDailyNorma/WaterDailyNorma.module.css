@@ -36,9 +36,18 @@
 }
 
 @media (min-width: 768px) {
+  .textH3 {
+    font-size: 15px;
+  }
+  .textDailyNorm {
+    font-size: 12px;
+  }
+
   .normContainer {
     width: 129px;
     height: 78px;
+    padding: 14px 18px;
     margin-bottom: 87px;
+    justify-content: space-around;
   }
 }
