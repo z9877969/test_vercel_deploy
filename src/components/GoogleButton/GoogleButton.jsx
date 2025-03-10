@@ -2,6 +2,8 @@ import React from "react";
 import { userAPI } from "../../redux/user/operations.js";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+import GoogleButtonForAuth from "../GoogleButtonForAuth/GoogleButtonForAuth.jsx";
+import s from "./GoogleButton.module.css";
 
 const GoogleButton = () => {
   const handleGoogleLogin = async () => {
@@ -15,9 +17,10 @@ const GoogleButton = () => {
   };
   return (
     <div>
-      <button onClick={handleGoogleLogin}>
-        <FcGoogle />
-      </button>
+      <GoogleButtonForAuth className={s.button} onClick={handleGoogleLogin}>
+        <FcGoogle className={s.icon} />
+        Sign Up with Google
+      </GoogleButtonForAuth>
     </div>
   );
 };

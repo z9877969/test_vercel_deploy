@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import { AuthFormContainer } from "../SignUpForm/SignUpForm.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { signInValidationSchema } from "../../validationSchemas/authValidation.js";
+import GoogleButton from "../GoogleButton/GoogleButton.jsx";
 
 const SignInForm = () => {
   const navigate = useNavigate();
@@ -114,6 +115,7 @@ const SignInForm = () => {
             Sign In
           </button>
         </form>
+        <GoogleButton />
         <div className={s.afterSignUpBox}>
           <p className={s.afterSignUpText}> Don't have an account?</p>
           <Link className={s.link} to="/signup">

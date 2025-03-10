@@ -8,6 +8,7 @@ import { register as authUser } from "../../redux/user/operations.js";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { signUpValidationSchema } from "../../validationSchemas/authValidation.js";
+import GoogleButton from "../GoogleButton/GoogleButton.jsx";
 
 export const AuthFormContainer = ({ children, className }) => {
   return <div className={clsx(s.container, className)}>{children}</div>;
@@ -149,6 +150,7 @@ const SignUpForm = () => {
             Sign Up
           </button>
         </form>
+        <GoogleButton />
         <div className={s.afterSignUpBox}>
           <p className={s.afterSignUpText}> Already have an account?</p>
           <Link className={s.link} to="/signin">
