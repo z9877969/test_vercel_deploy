@@ -1,0 +1,27 @@
+.button {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  border: none;
+  width: 100%;
+  color: var(--grey-color);
+  border-radius: 30px;
+  height: 50px;
+  background: #fff;
+  transition: all 0.7s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+@media (min-width: 768px) {
+  .button {
+    height: 60px;
+  }
+}
