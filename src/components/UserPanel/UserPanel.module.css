@@ -1,0 +1,29 @@
+.userPanelCont {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.helloUser {
+    margin-bottom: 20px;
+    font-family: var(--font-family);
+    font-size: 32px;
+    line-height: 100%;
+    font-weight: var(--font-weight-regular);
+}
+
+.helloUserSpan {
+    font-weight: var(--font-weight-bold);
+}
+
+@media (min-width: 768px) {
+    .userPanelCont {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .helloUser {
+        margin: 0;
+    }
+}

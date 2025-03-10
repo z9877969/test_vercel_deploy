@@ -1,0 +1,88 @@
+.userBar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: max-content;
+}
+
+.userBarButton {
+    cursor: pointer;
+    display: flex;
+    border-radius: 30px;
+    border: none;
+    gap: 8px;
+    padding: 6px 12px;
+
+    height: 50px;
+    align-items: center;
+    background-color: var(--grey-color);
+    justify-content: space-between;
+}
+
+.userName {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    font-size: 14px;
+    color: var(--main-white-color);
+    line-height: 130%;
+}
+
+.userImage {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.userImageCont {
+    max-width: 38px;
+    max-height: 38px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svgUse {
+    stroke: var(--main-white-color);
+    fill: none;
+    width: 100%;
+    height: 100%;
+}
+
+.svg {
+    width: 16px;
+    height: 16px;
+}
+
+.svgActive {
+    transform: rotate(180deg);
+    width: 16px;
+    height: 16px;
+}
+
+@media (min-width: 768px) {
+    .userBarButton {
+        gap: 10px;
+        height: 56px;
+    }
+
+    .svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .svgActive {
+        width: 20px;
+        height: 20px;
+    }
+
+    .userImageCont {
+        max-width: 44px;
+        max-height: 44px;
+    }
+
+    .userName {
+        font-size: 16px;
+        line-height: 150%;
+    }
+}
