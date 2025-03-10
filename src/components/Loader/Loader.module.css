@@ -1,0 +1,21 @@
+/* Loader.module.css */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.icon {
+  color: var(--accent-color);
+  animation: scaleUp 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
