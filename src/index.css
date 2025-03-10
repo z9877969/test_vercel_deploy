@@ -34,10 +34,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body.modal-open {
-  overflow: hidden;
-}
-
 section {
   flex-grow: 1;
 }
