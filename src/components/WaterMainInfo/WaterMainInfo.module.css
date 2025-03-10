@@ -13,10 +13,7 @@
 }
 
 .sectionWrapper {
-  padding: 16px;
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
+  padding-bottom: 16px;
 }
 
 .wrapper {
@@ -26,10 +23,11 @@
   flex-direction: column;
   padding: 24px 16px 32px;
   background-image: url("/img/bottle-mob.png"); /* Абсолютний шлях */
-  background-size: auto;
+  background-size: 262px 335px;
   background-position: center top 50px;
   background-repeat: no-repeat;
   height: auto;
+  margin: 0 auto;
 }
 
 .logo {
@@ -40,24 +38,18 @@
 }
 
 @media (min-width: 375px) {
-  .sectionWrapper {
-    max-width: 375px;
-  }
-
   .wrapper {
     padding: 24px 20px 32px;
-    background-position: center top 60px;
+    background-position: center top 50px;
   }
 }
 
 @media (min-width: 768px) {
-  .sectionWrapper {
-    max-width: 768px;
-  }
   .wrapper {
     padding: 32px 32px 64px;
     background-image: url("/public/img/bottle-tablet.png");
-    background-position: center top 70px;
+    background-size: 374px 477px;
+    background-position: center top 69px;
   }
 
   .logo {
@@ -66,13 +58,39 @@
   }
 }
 
-/* @media (min-width: 1440px) {
-    .sectionWrapper {
-        max-width: 1440px;
-    }
+@media (min-width: 1440px) {
+  .sectionWrapper {
+    padding-bottom: 0;
+  }
+  .wrapper {
+    width: 672px;
+    height: 736px;
+    background-image: url("/public/img/bottle-desktop.png");
+    background-size: 472px 604px;
+    background-position: center top 92px;
+    position: relative;
+  }
+  .logo {
+    margin-bottom: 0;
+  }
+}
 
-    .wrapper {
-        padding: ;
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .wrapper {
+    background-image: url("/img/bottle-mob@2x.png");
+  }
+}
 
-    }
-} */
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+  (min-width: 768px) and (min-resolution: 192dpi) {
+  .wrapper {
+    background-image: url("/img/bottle-tablet@2x.png");
+  }
+}
+
+@media (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
+  (min-width: 1440px) and (min-resolution: 192dpi) {
+  .wrapper {
+    background-image: url("/img/bottle-desktop@2x.png");
+  }
+}

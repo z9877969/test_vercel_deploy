@@ -1,12 +1,30 @@
-.wrapperPage {
+.trackerPageWrapper {
+  padding: 16px;
+  width: 100%;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  margin: 0 auto;
+}
+
+@media (min-width: 375px) {
+  .trackerPageWrapper {
+    max-width: 375px;
+  }
+}
+
+@media (min-width: 768px) {
+  .trackerPageWrapper {
+    max-width: 768px;
+    padding: 32px;
+  }
 }
 
 @media (min-width: 1440px) {
-  .wrapperPage {
+  .trackerPageWrapper {
+    max-width: 1440px;
     flex-direction: row;
     gap: 32px;
+    padding: 32px;
   }
 }

@@ -99,3 +99,12 @@
     border-radius: 9px;
   }
 }
+
+@media (min-width: 1440px) {
+  .container {
+    margin: 0 auto;
+    position: absolute;
+    top: 450px;
+    left: 188px;
+  }
+}
