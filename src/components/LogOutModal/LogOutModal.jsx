@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { BaseModal } from "../Modal/Modal";
+import { BaseModal } from "../BaseModal/BaseModal";
 import css from "./LogOutModal.module.css";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../redux/user/operations";
