@@ -4,7 +4,7 @@ import s from "./SignUpForm.module.css";
 import clsx from "clsx";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
-import { register as authUser } from "../../redux/auth/operations.js";
+import { register as authUser } from "../../redux/user/operations.js";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { signUpValidationSchema } from "../../validationSchemas/authValidation.js";
@@ -53,13 +53,8 @@ const SignUpForm = () => {
         navigate("/tracker");
       })
       .catch((error) => {
-        if (error?.response?.status === 409) {
+        if (error?.response?.data.message === "Email in use") {
           toast.error("User has already exists", {
-            duration: 2000,
-            position: "top-center",
-          });
-        } else if (error?.response?.status === 400) {
-          toast.error("Please enter a valid email", {
             duration: 2000,
             position: "top-center",
           });
