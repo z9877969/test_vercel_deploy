@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import WaterModal from "../WaterModal/WaterModal";
-import DeleteWaterModal from "../DeleteWaterModal/DeleteWaterModal";
+// import DeleteWaterModal from "../DeleteWaterModal/DeleteWaterModal";
 import styles from "./WaterItem.module.css";
 
 const WaterItem = ({ data }) => {
