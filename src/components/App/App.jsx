@@ -13,6 +13,7 @@ import { refreshUser, setAuthHeader } from "../../redux/user/operations.js";
 import SharedLayout from "../../../SharedLayout.jsx";
 import { Toaster } from "react-hot-toast";
 import GoogleAuthConfirm from "../GoogleAuthConfirm/GoogleAuthConfirm.jsx";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="signin" element={<SignInPage />} />
           <Route path="/auth/confirm-oauth" element={GoogleAuthConfirm} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
