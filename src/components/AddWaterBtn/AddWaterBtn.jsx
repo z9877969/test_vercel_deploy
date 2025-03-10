@@ -7,7 +7,6 @@ const AddWaterBtn = ({ onClick }) => {
       <button onClick={onClick} className={style.btn}>
         <svg className={style.iconPlus}>
           <use xlinkHref="/sprite.svg#icon-plus"></use>
-          {/* <use href="/public/sprite.svg#icon-plus"></use> */}
         </svg>
         <p className={style.btnText}>Add water</p>
       </button>

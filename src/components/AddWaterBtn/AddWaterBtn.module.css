@@ -31,9 +31,19 @@
 .iconPlus {
   width: 16px;
   height: 16px;
-  fill: white;
+  fill: #fff;
   margin-right: 8px;
   display: block;
+}
+
+.btn:hover .btnText,
+.btn:focus .btnText {
+  color: #9be1a0;
+}
+
+.btn:hover .iconPlus,
+.btn:focus .iconPlus {
+  --color1: #9be1a0 !important;
 }
 
 @media (min-width: 768px) {
