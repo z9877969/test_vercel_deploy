@@ -81,6 +81,13 @@
     margin-bottom: 28px;
   }
 
+  .deleteBtn {
+    
+  }
+  .cancelBtn {
+    
+  }
+
   @media (min-width: 768px) {
     .box {
       flex-direction: row;
