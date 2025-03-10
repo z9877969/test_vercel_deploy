@@ -13,7 +13,7 @@ const UserBar = () => {
         </div>
         <svg className={isActive ? css.svgActive : css.svg}>
           <use
-            href="../../../public/sprite.svg#icon-chevron-down"
+            href="/sprite.svg#icon-chevron-down"
             className={css.svgUse}
           ></use>
         </svg>
