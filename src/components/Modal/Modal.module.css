@@ -19,19 +19,20 @@
   background-color: rgba(47, 47, 47, 0.6);
 }
 
-  .close{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 999;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    fill: #2f2f2f;
-    
-  }
-    .svgClose {
-    fill: #2f2f2f;
-    width: 28px;
-    height: 28px;
-  }
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  fill: #2f2f2f;
+
+}
+
+.svgClose {
+  fill: #2f2f2f;
+  width: 28px;
+  height: 28px;
+}
