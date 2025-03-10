@@ -4,9 +4,9 @@ import s from "./SignInForm.module.css";
 import clsx from "clsx";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operations.js";
+import { logIn } from "../../redux/user/operations.js";
 import toast from "react-hot-toast";
-import { AuthFormContainer } from "../SignUpForm/SignUpForm.jsx"; // Перевірте шлях імпорту
+import { AuthFormContainer } from "../SignUpForm/SignUpForm.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { signInValidationSchema } from "../../validationSchemas/authValidation.js";
 
@@ -48,13 +48,8 @@ const SignInForm = () => {
         navigate("/tracker");
       })
       .catch((error) => {
-        if (error?.response?.status === 401) {
+        if (error?.response?.data.message === "User not found") {
           toast.error("Unauthorized user", {
-            duration: 2000,
-            position: "top-center",
-          });
-        } else if (error?.response?.status === 403) {
-          toast.error("Access forbidden", {
             duration: 2000,
             position: "top-center",
           });
