@@ -1,5 +1,5 @@
 import css from './DeleteWaterModal.module.css';
-import { deleteWater, updateWaterData } from '../../redux/water/operations';
+// import { deleteWater, updateWaterData } from '../../redux/water/operations';
 
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
