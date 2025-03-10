@@ -5,7 +5,7 @@ import s from "./TrackerPage.module.css";
 
 const TrackerPage = () => {
   return (
-    <div className={s.wrapperPage}>
+    <div className={s.trackerPageWrapper}>
       <WaterMainInfo />
       <WaterDetailedInfo />
     </div>
