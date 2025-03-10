@@ -21,16 +21,28 @@ const AdvantagesSection = () => {
       <div className={styles.advantagesContent}>
         <div className={styles.infoBox}>
           <div className={styles.userImages}>
-            <img src="/public/img/cust1.png" alt="User 1" />
-            <img src="/public/img/cust2.png" alt="User 2" />
-            <img src="/public/img/cust3.png" alt="User 3" />
+          <img 
+              src="/img/cust1.png" 
+              srcSet="/img/cust1.png 1x, /img/cust1@2x.png 2x" 
+              alt="User 1" 
+           />
+           <img 
+             src="/img/cust2.png" 
+             srcSet="/img/cust2.png 1x, /img/cust2@2x.png 2x" 
+             alt="User 2" 
+           />
+            <img 
+             src="/img/cust3.png" 
+             srcSet="/img/cust3.png 1x, /img/cust3@2x.png 2x" 
+             alt="User 3" 
+            />
           </div>
           <p className={styles.infoText}>
             Our <span className={styles.highlight}>happy</span> customers: {totalUsers ?? "Loading..."}
           </p>
         </div>
         <div className={styles.stats}>
-          <button className={`${styles.btn} ${styles.habitDrive}`}>Habit drive</button>
+          <button className={`${styles.btn} ${styles.habitDrive}`}><span className={styles.circle}></span>Habit drive</button>
           <button className={`${styles.btn} ${styles.viewStats}`}>View statistics</button>
           <p className={styles.personalRate}>Personal rate setting</p>
         </div>
