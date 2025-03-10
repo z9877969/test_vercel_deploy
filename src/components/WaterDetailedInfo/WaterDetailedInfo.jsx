@@ -8,10 +8,9 @@ import css from "./WaterDetailedInfo.module.css";
 const WaterDetailedInfo = () => {
   return (
     <section className={css.sectionWrapper}>
-      <div className={css.wrapper}>
-        <h2>HELLO</h2>
-        {/* <UserPanel /> */}
-        {/* <DailyInfo /> */}
+      <div className={"container"}>
+        <UserPanel />
+        <DailyInfo />
         <MonthInfo />
       </div>
     </section>

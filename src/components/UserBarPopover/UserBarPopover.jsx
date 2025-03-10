@@ -1,6 +1,7 @@
 import css from "./UserBarPopover.module.css";
 
 const UserBarPopover = () => {
+  const handleClick = () => {};
   return (
     <div className={css.userBarPopover}>
       <button className={css.setBut}>
@@ -12,7 +13,7 @@ const UserBarPopover = () => {
         </svg>
         Setting
       </button>
-      <button className={css.logBut}>
+      <button className={css.logBut} onClick={handleClick}>
         <svg className={css.svg}>
           <use
             href="../../../public/sprite.svg#icon-log-out"
