@@ -113,3 +113,19 @@ export const getUsersAmount = createAsyncThunk(
     }
   }
 );
+export const authWithGoogle = createAsyncThunk(
+  "user, authWithGoogle",
+  async (code, thunkAPI) => {
+    try {
+      const response = await userAPI.post("/auth/google/confirm-google-auth", {
+        code,
+      });
+      const { accessToken, user } = response.data.data;
+      setAuthHeader(accessToken);
+      localStorage.setItem("accessToken", accessToken);
+      return { accessToken, user };
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
+  authWithGoogle,
   fetchUserProfile,
   getUsersAmount,
   logIn,
@@ -98,6 +99,15 @@ const userSlice = createSlice({
       .addCase(getUsersAmount.fulfilled, (state, action) => {
         state.totalAmount = action.payload;
         state.loading = false;
+      })
+      .addCase(authWithGoogle.pending, (state) => {
+        handleAuthState(state, "pending");
+      })
+      .addCase(authWithGoogle.fulfilled, (state, action) => {
+        handleAuthState(state, "fulfilled", action);
+      })
+      .addCase(authWithGoogle.rejected, (state, action) => {
+        handleAuthState(state, "rejected", action);
       });
   },
 });
