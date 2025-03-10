@@ -1,6 +1,5 @@
 .button {
   font-family: var(--font-family);
-  margin-top: 32px;
   font-weight: var(--font-weight-bold);
   border: none;
   width: 100%;
@@ -11,8 +10,18 @@
   transition: all 0.7s ease-in-out;
   cursor: pointer;
   margin-bottom: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 .icon {
-  font-size: 18px;
+  font-size: 30px;
   margin-right: 10px;
+}
+@media (min-width: 768px) {
+  .button {
+    height: 60px;
+  }
 }

@@ -18,8 +18,8 @@ const GoogleButton = () => {
   return (
     <div>
       <GoogleButtonForAuth className={s.button} onClick={handleGoogleLogin}>
-        <FcGoogle className={s.icon} />
         Sign Up with Google
+        <FcGoogle className={s.icon} />
       </GoogleButtonForAuth>
     </div>
   );
