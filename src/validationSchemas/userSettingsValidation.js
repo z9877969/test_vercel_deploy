@@ -13,5 +13,14 @@ export const userSettingsValidationSchema = Yup.object({
   dailyNorm: Yup.number()
     .min(0.5, "Minimum 0.5 liters")
     .max(15, "Maximum 0.5 liters"),
-  avatarUrl: Yup.string().url("Please enter a valid URL"),
+  avatar: Yup.mixed()
+    .test("fileSize", "Max file size is 2MB", (value) => {
+      return !value || (value[0] && value[0].size <= 2 * 1024 * 1024);
+    })
+    .test("fileType", "Only JPEG, PNG", (value) => {
+      return (
+        !value ||
+        (value[0] && ["image/jpeg", "image/png"].includes(value[0].type))
+      );
+    }),
 });
