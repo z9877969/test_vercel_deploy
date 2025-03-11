@@ -4,17 +4,22 @@ import styles from  "./AdvantagesSection.module.css";
 
 const AdvantagesSection = () => {
   const [totalUsers, setTotalUsers] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchTotalUsers = async () => {
-      try {
-        const response = await axios.get("http://localhost:5174/users/count");
-        setTotalUsers(response.data.count);
-      } catch (error) {
-      }
-    };
-    fetchTotalUsers();
-  }, []);
+  // useEffect(() => {
+  //   const fetchTotalUsers = async () => {
+  //     try {
+  //       const response = await axios.get("https://h2oflow-team4-backend.onrender.com/users/count");
+  //       setTotalUsers(response.data.count);
+  //     } catch (error) {
+  //       console.error("Error fetching users count:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchTotalUsers();
+  // }, []);
 
   return (
     <section className={styles.advantagesSection}>
@@ -38,7 +43,8 @@ const AdvantagesSection = () => {
             />
           </div>
           <p className={styles.infoText}>
-            Our <span className={styles.highlight}>happy</span> customers: {totalUsers ?? "Loading..."}
+            Our <span className={styles.highlight}>happy</span> customers: {" "}
+            {!loading ? <span className={styles.userCount}>{totalUsers}</span> : <span className={styles.loading}>Loading...</span>}
           </p>
         </div>
         <div className={styles.stats}>
