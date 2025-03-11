@@ -1,3 +1,8 @@
+.container {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
 .box {
   position: relative;
   display: flex;
@@ -8,6 +13,9 @@
   background-color: var(--background-color);
   padding: 16px;
   padding-top: 24px;
+}
+.advantagesSection {
+  display: none;
 }
 @media (max-width: 374px) {
   .container {
@@ -31,5 +39,8 @@
     width: 672px;
     padding: 32px;
     gap: 0;
+  }
+  .advantagesSection {
+    display: block;
   }
 }
