@@ -1,0 +1,45 @@
+.container {
+    margin-top: 24px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    max-width: 400px;
+    margin: auto;
+    /* place-items: center; */
+}
+
+.day {
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 30px;
+    width: 28px;
+    height: 28px;
+    font-weight: 700;
+    font-size: 14px;
+    background: rgba(50, 63, 71, 0.2);
+    cursor: pointer;
+    /* transition: 0.3s; */
+}
+
+.day.partial {
+    background: lightblue;
+}
+
+.day.full {
+    background: white;
+}
+
+.day:hover {
+    opacity: 0.8;
+}
+
+.water-percent {
+    font-size: 12px;
+    margin-top: 5px;
+}
