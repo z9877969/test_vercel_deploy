@@ -9,7 +9,7 @@ import SignUpPage from "../../pages/SignUpPage/SignUpPage.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import SignInPage from "../../pages/SignInPage/SignInPage.jsx";
 import { selectIsLoggedIn, selectToken } from "../../redux/user/selectors.js";
-import { refreshUser, setAuthHeader } from "../../redux/user/operations.js";
+import { refreshUser } from "../../redux/user/operations.js";
 import SharedLayout from "../../../SharedLayout.jsx";
 import { Toaster } from "react-hot-toast";
 import GoogleAuthConfirm from "../GoogleAuthConfirm/GoogleAuthConfirm.jsx";
@@ -22,7 +22,6 @@ const App = () => {
 
   useEffect(() => {
     if (token && !isLoggedIn) {
-      setAuthHeader(token);
       dispatch(refreshUser());
     }
   }, [dispatch, token, isLoggedIn]);

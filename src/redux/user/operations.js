@@ -11,7 +11,8 @@ userAPI.interceptors.response.use(
   async (error) => {
     if (error.response?.status === 401) {
       try {
-        await store.dispatch(refreshUser());
+        const { token } = await store.dispatch(refreshUser()).unwrap();
+        error.config.headers["Authorization"] = `Bearer ${token}`;
         return userAPI.request(error.config);
       } catch (refreshError) {
         return Promise.reject(refreshError);
@@ -69,11 +70,12 @@ export const refreshUser = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await userAPI.post("users/refresh");
-      const newAccessToken = data.data.accessToken;
+      const newAccessToken = data.accessToken;
       setAuthHeader(newAccessToken);
-      return newAccessToken;
+      const userResponse = await userAPI.get("users");
+      return { token: newAccessToken, user: userResponse.data.user };
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.response.status);
+      return thunkAPI.rejectWithValue(e.response.message);
     }
   }
 );
@@ -82,10 +84,10 @@ export const fetchUserProfile = createAsyncThunk(
   "user/fetchProfile",
   async (_, thunkAPI) => {
     try {
-      const response = await userAPI.get("/users");
-      return response.data.user;
+      const { data } = await userAPI.get("/users");
+      return data.user;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.response.status);
+      return thunkAPI.rejectWithValue(e.response.message);
     }
   }
 );
@@ -94,10 +96,10 @@ export const updateUserProfile = createAsyncThunk(
   "user/updateUserProfile",
   async (userDataToUpdate, thunkAPI) => {
     try {
-      const response = await userAPI.patch("users/update", userDataToUpdate);
-      return response;
+      const { data } = await userAPI.patch("users/update", userDataToUpdate);
+      return data.user;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.response.status);
+      return thunkAPI.rejectWithValue(e.response.message);
     }
   }
 );
@@ -106,8 +108,8 @@ export const getUsersAmount = createAsyncThunk(
   "user/getUsersAmount",
   async (_, thunkAPI) => {
     try {
-      const response = await axiosInstance.get("/users/count");
-      return response.data.count;
+      const { data } = await axiosInstance.get("/users/count");
+      return data.count;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

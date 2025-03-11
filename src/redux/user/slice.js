@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import {
   authWithGoogle,
   fetchUserProfile,
@@ -67,38 +67,36 @@ const userSlice = createSlice({
       .addCase(logIn.rejected, (state, action) =>
         handleAuthState(state, "rejected", action)
       )
+
       .addCase(logOut.fulfilled, (state) => {
         state.userData = initialState.user.userData;
         state.token = null;
         state.isLoggedIn = false;
-        state.loading = false;
       })
+
       .addCase(refreshUser.fulfilled, (state, action) => {
-        state.token = action.payload;
-        state.isLoggedIn = true;
-        state.loading = false;
-      })
-      .addCase(refreshUser.rejected, (state, action) => {
-        state.token = null;
-        state.userData = initialState.user;
-        state.isLoggedIn = false;
-        state.loading = false;
-        state.error = action.payload;
-      })
-      .addCase(fetchUserProfile.fulfilled, (state, action) => {
+        state.token = action.payload.token;
         state.userData = action.payload.user;
-        state.loading = false;
+        state.isLoggedIn = true;
       })
+      .addCase(refreshUser.rejected, (state) => {
+        state.token = null;
+        state.userData = initialState.user.userData;
+        state.isLoggedIn = false;
+      })
+
+      .addCase(fetchUserProfile.fulfilled, (state, action) => {
+        state.userData = action.payload;
+      })
+
       .addCase(updateUserProfile.fulfilled, (state, action) => {
         state.userData = {
           ...state.userData,
-          ...action.payload.user,
+          ...action.payload,
         };
-        state.loading = false;
       })
       .addCase(getUsersAmount.fulfilled, (state, action) => {
         state.totalAmount = action.payload;
-        state.loading = false;
       })
       .addCase(authWithGoogle.pending, (state) => {
         handleAuthState(state, "pending");
@@ -108,7 +106,47 @@ const userSlice = createSlice({
       })
       .addCase(authWithGoogle.rejected, (state, action) => {
         handleAuthState(state, "rejected", action);
-      });
+      })
+
+      .addMatcher(
+        isAnyOf(
+          logOut.pending,
+          refreshUser.pending,
+          fetchUserProfile.pending,
+          updateUserProfile.pending,
+          getUsersAmount.pending
+        ),
+        (state) => {
+          state.loading = true;
+          state.error = null;
+        }
+      )
+
+      .addMatcher(
+        isAnyOf(
+          logOut.rejected,
+          refreshUser.rejected,
+          fetchUserProfile.rejected,
+          updateUserProfile.rejected,
+          getUsersAmount.rejected
+        ),
+        (state, action) => {
+          state.loading = false;
+          state.error = action.payload;
+        }
+      )
+      .addMatcher(
+        isAnyOf(
+          logOut.fulfilled,
+          refreshUser.fulfilled,
+          fetchUserProfile.fulfilled,
+          updateUserProfile.fulfilled,
+          getUsersAmount.fulfilled
+        ),
+        (state) => {
+          state.loading = false;
+        }
+      );
   },
 });
 
