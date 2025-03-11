@@ -1,30 +1,58 @@
 import React from "react";
+import style from "./WaterProgressBar.module.css";
 
 const WaterProgressBar = ({ consumed, dailyNorm }) => {
   const progress = (consumed / dailyNorm) * 100;
 
   return (
-    <div>
-      <h3>Прогрес споживання</h3>
-      <div
-        style={{
-          width: "100%",
-          backgroundColor: "#e0e0e0",
-          borderRadius: "5px",
-        }}
-      >
-        <div
-          style={{
-            width: `${progress}%`,
-            backgroundColor: "#76c7c0",
-            height: "20px",
-            borderRadius: "5px",
-          }}
-        ></div>
+    <div className={style.container}>
+      <h3 className={style.textH3}>Today</h3>
+      <div className={style.scaleContainer}>
+        <div className={style.emptyScale}>
+          <div
+            className={style.progressScale}
+            style={{
+              width: `${progress}%`,
+            }}
+          ></div>
+          <div
+            className={style.scaleCircle}
+            style={{
+              left: `${progress}%`,
+            }}
+          ></div>
+
+          <div
+            className={style.scaleText}
+            style={{
+              left: `${progress}%`,
+              transform: "translateX(-50%)",
+            }}
+          >
+            {Math.round(progress)}%
+          </div>
+          {progress >= 10 && (
+            <div
+              className={style.scaleText}
+              style={{
+                left: "0",
+              }}
+            >
+              0%
+            </div>
+          )}
+          {progress <= 90 && (
+            <div
+              className={style.scaleText}
+              style={{
+                right: "0",
+              }}
+            >
+              100%
+            </div>
+          )}
+        </div>
       </div>
-      <p>
-        {consumed} л / {dailyNorm} л
-      </p>
     </div>
   );
 };

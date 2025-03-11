@@ -4,11 +4,12 @@ import s from "./SignInForm.module.css";
 import clsx from "clsx";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operations.js";
+import { logIn } from "../../redux/user/operations.js";
 import toast from "react-hot-toast";
-import { AuthFormContainer } from "../SignUpForm/SignUpForm.jsx"; // Перевірте шлях імпорту
+import { AuthFormContainer } from "../SignUpForm/SignUpForm.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { signInValidationSchema } from "../../validationSchemas/authValidation.js";
+import GoogleButton from "../GoogleButton/GoogleButton.jsx";
 
 const SignInForm = () => {
   const navigate = useNavigate();
@@ -48,13 +49,8 @@ const SignInForm = () => {
         navigate("/tracker");
       })
       .catch((error) => {
-        if (error?.response?.status === 401) {
+        if (error?.response?.data.message === "User not found") {
           toast.error("Unauthorized user", {
-            duration: 2000,
-            position: "top-center",
-          });
-        } else if (error?.response?.status === 403) {
-          toast.error("Access forbidden", {
             duration: 2000,
             position: "top-center",
           });
@@ -119,6 +115,7 @@ const SignInForm = () => {
             Sign In
           </button>
         </form>
+        <GoogleButton />
         <div className={s.afterSignUpBox}>
           <p className={s.afterSignUpText}> Don't have an account?</p>
           <Link className={s.link} to="/signup">

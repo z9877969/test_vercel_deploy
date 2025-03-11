@@ -11,4 +11,5 @@ const WaterDetailedInfo = () => {
     </section>
   );
 };
+
 export default WaterDetailedInfo;

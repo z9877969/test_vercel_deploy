@@ -1,10 +1,18 @@
 export const initialState = {
   user: {
-    name: null,
-    email: null,
+    userData: {
+      name: "User",
+      email: null,
+      gender: "woman",
+      weight: 0,
+      dailySportTime: 0,
+      dailyNorm: 0,
+      avatarUrl: "",
+    },
+    totalAmount: null,
+    isLoggedIn: false,
+    token: null,
+    loading: false,
+    error: null,
   },
-  isLoggedIn: false,
-  token: null,
-  loading: false,
-  error: null,
 };
