@@ -1,15 +1,13 @@
+import { BaseModal } from "../BaseModal/BaseModal.jsx";
 import UserSettingsForm from "../UserSettingsForm/UserSettingsForm.jsx";
 import s from "./UserSettingsModal.module.css";
 
-const UserSettingsModal = () => {
+const UserSettingsModal = ({ isOpen, onClose }) => {
   return (
-    <div>
-      <svg className={s.modalIconClose} width="24" height="24">
-        <use href="/sprite.svg#icon-close" />
-      </svg>
+    <BaseModal isOpen={isOpen} onClose={onClose}>
       <h1>Setting</h1>
-      <UserSettingsForm />
-    </div>
+      <UserSettingsForm onClose={onClose} />
+    </BaseModal>
   );
 };
 
