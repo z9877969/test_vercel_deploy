@@ -1,12 +1,12 @@
-import React from "react";
+import css from "./AddWaterBtn.module.css";
 
 const AddWaterBtn = ({ onClick }) => {
   return (
-    <button
-      onClick={onClick}
-      style={{ padding: "10px 20px", fontSize: "16px" }}
-    >
-      Додати воду
+    <button onClick={onClick} className={css.btn}>
+      <div className={css.wrapper}>
+        {/* зі спрайту вставити плюсік сюди */}
+        <p> Додати воду</p>
+      </div>
     </button>
   );
 };
