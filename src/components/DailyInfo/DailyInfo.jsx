@@ -1,27 +1,42 @@
 import React from "react";
-import ChooseDate from "../ChooseDate/ChooseDate";
+import { useState, useEffect, useMemo } from "react";
+// import ChooseDate from "../ChooseDate/ChooseDate";
 import AddWaterBtn from "../AddWaterBtn/AddWaterBtn";
 import WaterList from "../WaterList/WaterList";
 import styles from "./DailyInfo.module.css";
+import { useDispatch, useSelector } from "react-redux";
 
-const DailyInfo = () => {
+const formatDate = (date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
+
+const DailyInfo = ({ chosenDate }) => {
+  const dispatch = useDispatch();
+  const [isCurrentDay, setIsCurrentDay] = useState("");
+
+  const formattedDate = useMemo(
+    () => formatDate(chosenDate || new Date()),
+    [chosenDate]
+  );
+
+  useEffect(() => {
+    if (formattedDate !== isCurrentDay) {
+      setIsCurrentDay(formattedDate);
+      dispatch(getWaterPerDay(formattedDate));
+    }
+  }, [dispatch, formattedDate, isCurrentDay]);
+
   return (
     <section className={styles.dailyInfo}>
-      <div className={styles.header}>
-        <h2>
-          Hello, <span className={styles.bold}>Nadia!</span>
-        </h2>
-        <div className={styles.profile}>
-          <span>Nadia</span>
-          <img src="/path-to-profile-image.jpg" alt="Profile" />
-        </div>
-      </div>
       <div className={styles.todaySection}>
         <h3>Today</h3>
-        <WaterList />
         <AddWaterBtn />
-      </div>
-      <ChooseDate />
+      </div>{" "}
+      <WaterList />
+      {/* <ChooseDate /> */}
     </section>
   );
 };

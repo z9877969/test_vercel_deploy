@@ -8,45 +8,25 @@ const WaterProgressBar = ({ consumed, dailyNorm }) => {
     <div className={style.container}>
       <h3 className={style.textH3}>Today</h3>
       <div className={style.scaleContainer}>
-        <div
-          style={{
-            width: "100%",
-            backgroundColor: "#F0EFF4",
-            borderRadius: "3px",
-            position: "relative",
-            height: "6px",
-          }}
-        >
+        <div className={style.emptyScale}>
           <div
+            className={style.progressScale}
             style={{
               width: `${progress}%`,
-              backgroundColor: "#9BE1A0",
-              height: "6px",
-              borderRadius: "3px",
             }}
           ></div>
           <div
+            className={style.scaleCircle}
             style={{
-              width: "12px",
-              backgroundColor: "white",
-              height: "12px",
-              borderRadius: "50%",
-              border: "1px solid #9BE1A0",
-              position: "absolute",
-              top: "50%",
               left: `${progress}%`,
-              transform: "translate(-50%, -50%)",
-              transition: "left 0.3s ease",
             }}
           ></div>
 
           <div
             className={style.scaleText}
             style={{
-              position: "absolute",
-              top: "16px", // Відстань від бігунка до тексту
               left: `${progress}%`,
-              transform: "translateX(-50%)", // Центруємо текст під бігунком
+              transform: "translateX(-50%)",
             }}
           >
             {Math.round(progress)}%
@@ -55,8 +35,6 @@ const WaterProgressBar = ({ consumed, dailyNorm }) => {
             <div
               className={style.scaleText}
               style={{
-                position: "absolute",
-                top: "16px",
                 left: "0",
               }}
             >
@@ -67,8 +45,6 @@ const WaterProgressBar = ({ consumed, dailyNorm }) => {
             <div
               className={style.scaleText}
               style={{
-                position: "absolute",
-                top: "16px",
                 right: "0",
               }}
             >
