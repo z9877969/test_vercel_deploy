@@ -7,12 +7,14 @@ import { Controller, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { updateUserProfile } from "../../redux/user/operations.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const UserSettingsForm = ({ onClose }) => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  const [preview, setPreview] = useState(user.avatarUrl);
+  const [preview, setPreview] = useState(
+    user.avatarUrl || "/public/img/auth.png"
+  );
 
   const {
     register,
@@ -20,24 +22,35 @@ const UserSettingsForm = ({ onClose }) => {
     watch,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(userSettingsValidationSchema),
-    defaultsValues: {
-      name: user.name,
-      email: user.email,
-      gender: user.gender,
-      weight: user.weight,
-      dailySportTime: user.dailySportTime,
-      dailyNorm: user.dailyNorm / 1000,
+    defaultValues: {
+      name: "User",
+      email: "",
+      gender: "woman",
+      weight: 0,
+      dailySportTime: 0,
+      dailyNorm: 1.5,
     },
   });
+
+  useEffect(() => {
+    if (user) {
+      reset({
+        ...user,
+        dailyNorm: user.dailyNorm > 0 ? user.dailyNorm / 1000 : 1.5,
+      });
+      setPreview(user.avatarUrl || "/public/img/auth.png");
+    }
+  }, [user, reset]);
 
   const gender = watch("gender");
   const weight = watch("weight");
   const dailySportTime = watch("dailySportTime");
 
   const countDailyNorma = () => {
-    if (!weight && !dailySportTime) return "1.5 L";
+    if (weight === 0 && dailySportTime === 0) return "1.5 L";
     return gender === "woman"
       ? (weight * 0.03 + dailySportTime * 0.4).toFixed(1) + " L"
       : (weight * 0.04 + dailySportTime * 0.6).toFixed(1) + " L";
@@ -68,7 +81,7 @@ const UserSettingsForm = ({ onClose }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <label htmlFor="avatar">
-          <img src={preview} alt="Avatar" />
+          <img src={preview || "/public/img/auth.png"} alt="Avatar" />
           <div>
             <svg className={s.uploadIcon} width="18" height="18">
               <use href="/sprite.svg#icon-upload" />
@@ -86,7 +99,7 @@ const UserSettingsForm = ({ onClose }) => {
               accept="image/*"
               onChange={(event) => {
                 field.onChange(event.target.files);
-                if (e.target.files[0]) {
+                if (event.target.files[0]) {
                   setPreview(URL.createObjectURL(event.target.files[0]));
                 }
               }}
@@ -178,8 +191,15 @@ const UserSettingsForm = ({ onClose }) => {
         <div>
           <p>The required amount of water in liters per day:</p>
           <span>{countDailyNorma()}</span>
-          <label htmlFor="dailyNorm"></label>
-          <input id="dailyNorm" {...register("dailyNorm")} type="number" />
+          <label htmlFor="dailyNorm">
+            Write down how much water you will drink:
+          </label>
+          <input
+            id="dailyNorm"
+            {...register("dailyNorm")}
+            type="number"
+            step="any"
+          />
           {errors.dailyNorm && <p>{errors.dailyNorm.message}</p>}
         </div>
       </div>
