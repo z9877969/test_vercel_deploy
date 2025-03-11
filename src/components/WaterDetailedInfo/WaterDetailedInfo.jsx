@@ -1,7 +1,7 @@
 import DailyInfo from "../DailyInfo/DailyInfo.jsx";
 import css from "../WaterDetailedInfo/WaterDetailedInfo.module.css";
 
-export default function WaterDetailedInfo() {
+const WaterDetailedInfo = () => {
   // антону:
   // в цьому компоненті я так розумію потрібнно пов'язати дейлі інфо і календар. потрібно реалізувати логіку вибору дати
   // і передавати її у обидва компоненти. Я поки передаю поточний день
@@ -10,4 +10,6 @@ export default function WaterDetailedInfo() {
       <DailyInfo pickTheDay={new Date()} />
     </section>
   );
-}
+};
+
+export default WaterDetailedInfo;
