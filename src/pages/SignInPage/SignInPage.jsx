@@ -5,6 +5,8 @@ import SignInForm from "../../components/SignInForm/SignInForm.jsx";
 import AdvantagesSection from "../../components/AdvantagesSection/AdvantagesSection.jsx";
 import { useSelector } from "react-redux";
 import { selectLoading } from "../../redux/user/selectors.js";
+import Loader from "../../components/Loader/Loader.jsx";
+
 const SignInPage = () => {
   const isLoading = useSelector(selectLoading);
   return isLoading ? (
