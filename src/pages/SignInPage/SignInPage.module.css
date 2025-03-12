@@ -32,7 +32,7 @@
 }
 @media (min-width: 768px) and (max-width: 1439px) {
   .container {
-    width: 704px;
+    /* width: 704px; */
     padding: 32px;
   }
 }
