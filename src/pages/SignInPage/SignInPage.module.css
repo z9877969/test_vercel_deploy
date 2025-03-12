@@ -1,13 +1,15 @@
 .container {
-  display: flex;
+  /* display: flex;
   gap: 32px;
-  width: 100%;
+  width: 100%; */
+  margin: 0 auto;
+  padding: 16px;
 }
 .box {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
-  gap: 126px;
+  gap: 172px;
   width: 100%;
   border-radius: 30px;
   background-color: var(--background-color);
