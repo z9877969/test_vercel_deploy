@@ -13,9 +13,7 @@ import { PiExclamationMarkBold } from "react-icons/pi";
 const UserSettingsForm = ({ onClose }) => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  const [preview, setPreview] = useState(
-    user.avatarUrl || "/public/img/avatar.png"
-  );
+  const [preview, setPreview] = useState(user.avatarUrl || "/img/avatar.png");
 
   const {
     register,
@@ -43,7 +41,7 @@ const UserSettingsForm = ({ onClose }) => {
         ...user,
         dailyNorm: user.dailyNorm > 0 ? user.dailyNorm / 1000 : 1.5,
       });
-      setPreview(user.avatarUrl || "/public/img/avatar.png");
+      setPreview(user.avatarUrl || "/img/avatar.png");
     }
   }, [user, reset]);
 
@@ -83,7 +81,7 @@ const UserSettingsForm = ({ onClose }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={s.formIconWrap}>
         <label htmlFor="avatar">
-          <img src={preview || "/public/img/avatar.png"} alt="Avatar" />
+          <img src={preview || "/img/avatar.png"} alt="Avatar" />
           <div className={s.uploadBtn}>
             <svg className={s.uploadIcon} width="18" height="18">
               <use href="/sprite.svg#icon-upload" />
