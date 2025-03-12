@@ -185,7 +185,8 @@
 @media (min-width: 1400px) {
   .container {
     width: 100%;
-    align-items: flex-start;
+    justify-content: center; /* Центрує контент */
+    flex: 1; /* Дає змогу зайняти однакову висоту */
     padding-top: 66px;
   }
 }
