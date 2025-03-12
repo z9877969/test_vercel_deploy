@@ -10,8 +10,10 @@ const WaterItem = ({ data }) => {
   return (
     <div className={styles.waterItem}>
       <div className={styles.icon}>🥤</div>
-      <p className={styles.amount}>{data.amount} ml</p>
-      <p className={styles.time}>{data.time}</p>
+      <div className={styles.info}>
+        <p className={styles.amount}>{data.amount} ml</p>
+        <p className={styles.time}>{data.time}</p>
+      </div>
       <div className={styles.actions}>
         <button onClick={() => setIsEditOpen(true)}>✏️</button>
         <button onClick={() => setIsDeleteOpen(true)}>🗑️</button>

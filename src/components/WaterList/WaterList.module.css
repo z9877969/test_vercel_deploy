@@ -1,6 +1,8 @@
 .waterList {
   display: flex;
-  gap: 12px;
+  margin-bottom: 24px;
+  justify-content: space-between;
+  gap: 16px;
   overflow-x: auto;
   padding-bottom: 10px;
   white-space: nowrap;

@@ -1,13 +1,18 @@
 .dailyInfo {
   background: var(--background-color);
-  border-radius: 30px;
-  padding: 32px;
+  margin-top: 49px;
+   
+  width: 100%;
+  height: 174px;
 }
 
-.header {
+.wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #f0eff4;
+  height: 32px;
+  margin-bottom: 24px;
 }
 
 .bold {
@@ -30,8 +35,11 @@
   border-radius: 50%;
 }
 
-.todaySection {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
+.today{
+  font-family: Poppins;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -1%;
 }
+
