@@ -13,7 +13,7 @@ const UserSettingsForm = ({ onClose }) => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const [preview, setPreview] = useState(
-    user.avatarUrl || "/public/img/auth.png"
+    user.avatarUrl || "/public/img/avatar.png"
   );
 
   const {
@@ -41,7 +41,7 @@ const UserSettingsForm = ({ onClose }) => {
         ...user,
         dailyNorm: user.dailyNorm > 0 ? user.dailyNorm / 1000 : 1.5,
       });
-      setPreview(user.avatarUrl || "/public/img/auth.png");
+      setPreview(user.avatarUrl || "/public/img/avatar.png");
     }
   }, [user, reset]);
 
@@ -79,10 +79,10 @@ const UserSettingsForm = ({ onClose }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+      <div className={s.formIconWrap}>
         <label htmlFor="avatar">
-          <img src={preview || "/public/img/auth.png"} alt="Avatar" />
-          <div>
+          <img src={preview || "/public/img/avatar.png"} alt="Avatar" />
+          <div className={s.uploadBtn}>
             <svg className={s.uploadIcon} width="18" height="18">
               <use href="/sprite.svg#icon-upload" />
             </svg>
@@ -108,32 +108,33 @@ const UserSettingsForm = ({ onClose }) => {
         />
         {errors.avatar && <p>{errors.avatar.message}</p>}
       </div>
-
       <div>
         <fieldset>
-          <legend>Your gender identity</legend>
+          <legend className={s.inputName}>Your gender identity</legend>
 
           <Controller
             name="gender"
             control={control}
             render={({ field }) => (
-              <div>
-                <label>
+              <div className={s.genderWrap}>
+                <label className={s.genderLabel}>
                   <input
                     type="radio"
                     {...field}
                     value="woman"
                     checked={field.value === "woman"}
                   />
+                  <span className={s.customRadio}></span>
                   Woman
                 </label>
-                <label>
+                <label className={s.genderLabel}>
                   <input
                     type="radio"
                     {...field}
                     value="man"
                     checked={field.value === "man"}
                   />
+                  <span className={s.customRadio}></span>
                   Man
                 </label>
               </div>
@@ -142,16 +143,32 @@ const UserSettingsForm = ({ onClose }) => {
         </fieldset>
         {errors.gender && <p>{errors.gender.message}</p>}
 
-        <div>
-          <label htmlFor="name">Your name</label>
-          <input id="name" {...register("name")} type="text" />
+        <div className={s.wrapCredentials}>
+          <label htmlFor="name" className={s.inputName}>
+            Your name
+          </label>
+          <input
+            id="name"
+            {...register("name")}
+            type="text"
+            className={s.formInput}
+            style={{ marginBottom: "14px" }}
+          />
           {errors.name && <p className={s.error}>{errors.name.message}</p>}
-          <label htmlFor="email">Email</label>
-          <input id="email" {...register("email")} type="email" />
+          <label htmlFor="email" className={s.inputName}>
+            {" "}
+            Email
+          </label>
+          <input
+            id="email"
+            {...register("email")}
+            type="email"
+            className={s.formInput}
+          />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
         <section>
-          <h2>My daily norma</h2>
+          <h3 className={s.inputName}>My daily norma</h3>
 
           <p> For woman:</p>
           <span>V = (M * 0.03) + (T * 0.4)</span>
@@ -174,7 +191,12 @@ const UserSettingsForm = ({ onClose }) => {
 
         <div>
           <label htmlFor="weight">Your weight in kilograms:</label>
-          <input id="weight" {...register("weight")} type="number" />
+          <input
+            id="weight"
+            {...register("weight")}
+            type="number"
+            className={s.formInput}
+          />
           {errors.weight && <p>{errors.weight.message}</p>}
 
           <label htmlFor="dailySportTime">
@@ -185,13 +207,14 @@ const UserSettingsForm = ({ onClose }) => {
             id="dailySportTime"
             {...register("dailySportTime")}
             type="number"
+            className={s.formInput}
           />
           {errors.dailySportTime && <p>{errors.dailySportTime.message}</p>}
         </div>
         <div>
           <p>The required amount of water in liters per day:</p>
           <span>{countDailyNorma()}</span>
-          <label htmlFor="dailyNorm">
+          <label htmlFor="dailyNorm" className={s.inputName}>
             Write down how much water you will drink:
           </label>
           <input
@@ -199,6 +222,7 @@ const UserSettingsForm = ({ onClose }) => {
             {...register("dailyNorm")}
             type="number"
             step="any"
+            className={s.formInput}
           />
           {errors.dailyNorm && <p>{errors.dailyNorm.message}</p>}
         </div>

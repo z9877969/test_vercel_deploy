@@ -1,0 +1,20 @@
+.userSetWrap {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.userSetWrap h2 {
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .userSetWrap h2 {
+    font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+}

@@ -1,4 +1,170 @@
+.formIconWrap {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.formIconWrap input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.formIconWrap img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.uploadBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
 .uploadIcon {
   stroke: var(--main-text-color);
   fill: var(--main-white-color);
+}
+
+.inputName {
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.genderWrap {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  display: flex;
+  gap: 20px;
+}
+
+.genderLabel {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.genderLabel input[type="radio"] {
+  display: none;
+}
+
+.customRadio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.customRadio::after {
+  content: "";
+  width: 8.57px;
+  height: 8.57px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform;
+}
+
+.genderLabel input[type="radio"]:checked + .customRadio::after {
+  transform: scale(1);
+}
+
+.wrapCredentials {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.formInput {
+  margin-top: 8px;
+  display: block;
+  outline: none;
+  border: 1px solid rgba(47, 47, 47, 0.15);
+  border-radius: 15px;
+  padding: 16px 14px;
+  width: 303px;
+  height: 46px;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family);
+  transform: border-color 0.2s ease-in-out;
+}
+
+.formInput:hover,
+.formInput:active {
+  border-color: rgba(47, 47, 47, 0.4);
+}
+
+@media (min-width: 768px) {
+  .formIconWrap img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .uploadBtn {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .uploadIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .inputName {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+
+  .genderWrap {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .wrapCredentials {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .formInput {
+    margin-top: 8px;
+    display: block;
+    outline: none;
+    border: 1px solid rgba(47, 47, 47, 0.15);
+    border-radius: 15px;
+    padding: 16px 14px;
+    width: 303px;
+    height: 46px;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.01em;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family);
+    transform: border-color 0.2s ease-in-out;
+  }
+
+  .formInput:hover,
+  .formInput:active {
+    border-color: rgba(47, 47, 47, 0.4);
+  }
+}
+
+@media (min-width: 1440px) {
 }
