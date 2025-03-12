@@ -5,7 +5,7 @@ const AddWaterBtn = ({ onClick }) => {
     <button onClick={onClick} className={css.btn}>
       <div className={css.wrapper}>
         {/* зі спрайту вставити плюсік сюди */}
-        <p> Додати воду</p>
+        <p className={css.water}> Add water</p>
       </div>
     </button>
   );

@@ -1,21 +1,29 @@
 .waterItem {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background: var(--main-white-color);
-  border-radius: 12px;
-  padding: 12px;
-  min-width: 120px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 25px 26px;
+  min-width: 192px;
+  height: 86px;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(158, 27, 27, 0.1);
 }
 
+.info{
+  display: flex;
+  flex-direction: column;
+
+}
 .amount {
   font-weight: var(--font-weight-bold);
 }
 
 .actions {
   display: flex;
+  flex-direction: column;
   gap: 8px;
   margin-top: 8px;
 }

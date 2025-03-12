@@ -32,8 +32,8 @@ const DailyInfo = ({ chosenDate }) => {
 
   return (
     <section className={styles.dailyInfo}>
-      <div className={styles.todaySection}>
-        <h3>Today</h3>
+      <div className={styles.wrapper}>
+        <h3 className={styles.today}>Today</h3>
         <AddWaterBtn />
       </div>{" "}
       <WaterList />
