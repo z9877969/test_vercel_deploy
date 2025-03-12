@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import css from "./Calendar.module.css";
 
-const Calendar = ({ waterData }) => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+const Calendar = ({ currentDate, waterData }) => {
   const [days, setDays] = useState([]);
 
   useEffect(() => {
@@ -18,29 +17,8 @@ const Calendar = ({ waterData }) => {
     setDays(Array.from({ length: lastDay }, (_, i) => i + 1));
   };
 
-  //   const handleDateClick = async (day) => {
-  //     const dateString = `${currentDate.getFullYear()}-${String(
-  //       currentDate.getMonth() + 1
-  //     ).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-  //     console.log("Вибрана дата:", dateString);
-
-  //     try {
-  //       const response = await fetch(`/api/water-tracker?date=${dateString}`);
-  //       const data = await response.json();
-  //       console.log("Дані з бекенду:", data);
-  //     } catch (error) {
-  //       console.error("Помилка отримання даних", error);
-  //     }
-  //   };
-
   return (
     <div className={css.container}>
-      <h2>
-        {currentDate.toLocaleString("uk-UA", {
-          month: "long",
-          year: "numeric",
-        })}
-      </h2>
       <div className={css.grid}>
         {days.map((day) => {
           const dateKey = `${currentDate.getFullYear()}-${String(
