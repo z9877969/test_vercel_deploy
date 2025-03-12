@@ -12,13 +12,15 @@ const SignInPage = () => {
   return isLoading ? (
     <Loader />
   ) : (
-    <div className={s.container}>
-      <div className={s.box}>
-        <Logo />
-        <SignInForm />
-      </div>
-      <div className={s.advantagesSection}>
-        <AdvantagesSection />
+    <div className={s.signUpWrapper}>
+      <div className={s.container}>
+        <div className={s.box}>
+          <Logo />
+          <SignInForm />
+        </div>
+        <div className={s.advantagesSection}>
+          <AdvantagesSection />
+        </div>
       </div>
     </div>
   );

@@ -42,6 +42,14 @@
   letter-spacing: -0.01em;
   color: var(--main-text-color);
   text-align: left;
+}
+.signUpLabelText {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.01em;
+  color: var(--main-text);
   margin-bottom: 8px;
 }
 

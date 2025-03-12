@@ -42,6 +42,14 @@
   letter-spacing: -0.01em;
   color: var(--main-text-color);
   text-align: left;
+}
+.signUpLabelText {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.01em;
+  color: var(--main-text);
   margin-bottom: 8px;
 }
 
@@ -177,7 +185,8 @@
 @media (min-width: 1400px) {
   .container {
     width: 100%;
-    align-items: flex-start;
+    justify-content: center; /* Центрує контент */
+    flex: 1; /* Дає змогу зайняти однакову висоту */
     padding-top: 66px;
   }
 }

@@ -74,7 +74,7 @@ const SignUpForm = () => {
         <h2 className={s.signUpTitle}>Sign Up</h2>
         <form className={s.signUpForm} onSubmit={handleSubmit(onSubmit)}>
           <label className={s.signUpLabel}>
-            Email
+            <span className={s.signUpLabelText}>Email</span>
             <input
               type="email"
               placeholder="Enter your email"
@@ -87,7 +87,7 @@ const SignUpForm = () => {
           </label>
 
           <label className={s.signUpLabel}>
-            Password
+            <span className={s.signUpLabelText}>Password</span>
             <div className={s.inputField}>
               <input
                 type={showPassword ? "text" : "password"}
@@ -117,7 +117,7 @@ const SignUpForm = () => {
           </label>
 
           <label className={s.signUpLabel}>
-            Repeat password
+            <span className={s.signUpLabelText}>Repeat password</span>
             <div className={s.inputField}>
               <input
                 className={clsx(s.input, {
