@@ -6,20 +6,20 @@ const AdvantagesSection = () => {
   const [totalUsers, setTotalUsers] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const fetchTotalUsers = async () => {
-  //     try {
-  //       const response = await axios.get("https://h2oflow-team4-backend.onrender.com/users/count");
-  //       setTotalUsers(response.data.count);
-  //     } catch (error) {
-  //       console.error("Error fetching users count:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchTotalUsers = async () => {
+      try {
+        const response = await axios.get("/api/users/count");
+        setTotalUsers(response.data.count);
+      } catch (error) {
+        console.error("Error fetching users count:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  //   fetchTotalUsers();
-  // }, []);
+    fetchTotalUsers();
+  }, []);
 
   return (
     <section className={styles.advantagesSection}>
