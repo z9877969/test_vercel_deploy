@@ -5,11 +5,10 @@
 .box {
   display: flex;
   flex-direction: column;
-  gap: 172px;
+  gap: 126px;
   width: 100%;
   border-radius: 30px;
   background-color: var(--background-color);
-
   padding: 16px;
   padding-top: 24px;
 }
@@ -42,13 +41,20 @@
     padding: 32px;
     width: 100%;
   }
+  .box {
+    gap: 0;
+  }
+  .advantagesSection {
+    display: flex;
+  }
   .signUpWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
   }
-  .advantagesSection {
-    display: flex;
+
+  .box {
+    width: 672px;
   }
 }
