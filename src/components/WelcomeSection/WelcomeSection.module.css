@@ -75,7 +75,7 @@
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: -0.01em;
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   color: var(--grey-color);
   text-decoration: none;
   transition: background-color 150ms ease-in;
