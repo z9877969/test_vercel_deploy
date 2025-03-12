@@ -47,5 +47,9 @@
  <path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M16 6.667v18.667"></path> 
  <path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M6.667 16h18.667"></path>
 </symbol>
+<symbol id="icon-plus-bl" viewBox="0 0 32 32">
+ <path fill="none" stroke="#323F47" style="stroke: var(--color1, #323F47)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M16 6.667v18.667"></path> 
+ <path fill="none" stroke="#323F47" style="stroke: var(--color1, #323F47)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M6.667 16h18.667"></path>
+</symbol>
 </defs>
 </svg>

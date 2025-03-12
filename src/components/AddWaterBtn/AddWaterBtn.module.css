@@ -1,7 +1,13 @@
 .btn {
     padding: 10px 20px; 
     font-size: 16px;
-        
+        font-family: Poppins;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -1%;
+        text-align: center;
+        color: #323F47;    
 }
 
 .wrapper {
@@ -10,12 +16,14 @@
     gap: 10px;
 }
 
-.water{
-    font-family: Poppins;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -1%;
-        text-align: center;
-        color: #323F47;
+.icon {
+   fill: #9be1a0;
+    stroke: #323f47;
+    transition: 250ms;
+}
+
+.icon:hover {
+    fill: #323f47;
+    stroke: rgb(253, 253, 253);
+    transition: 250ms;
 }
