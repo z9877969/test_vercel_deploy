@@ -220,4 +220,5 @@ body {
   font-weight: var(--font-weight-regular);
   color: var(--main-text-color);
   background-color: var(--main-white-color);
+  overflow: hidden;
 }
