@@ -69,7 +69,7 @@ const SignInForm = () => {
         <h2 className={s.signUpTitle}>Sign In</h2>
         <form className={s.signUpForm} onSubmit={handleSubmit(onSubmit)}>
           <label className={s.signUpLabel}>
-            Email
+            <span className={s.signUpLabelText}>Email</span>
             <input
               type="email"
               placeholder="Enter your email"
@@ -82,7 +82,7 @@ const SignInForm = () => {
           </label>
 
           <label className={s.signUpLabel}>
-            Password
+            <span className={s.signUpLabelText}>Password</span>
             <div className={s.inputField}>
               <input
                 type={showPassword ? "text" : "password"}
