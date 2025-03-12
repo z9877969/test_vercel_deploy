@@ -96,7 +96,7 @@ export const updateUserProfile = createAsyncThunk(
   "user/updateUserProfile",
   async (userDataToUpdate, thunkAPI) => {
     try {
-      const { data } = await userAPI.patch("users/update", userDataToUpdate);
+      const { data } = await userAPI.patch("/users", userDataToUpdate);
       return data.user;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.response.message);

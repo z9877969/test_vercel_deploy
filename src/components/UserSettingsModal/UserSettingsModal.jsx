@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import { BaseModal } from "../BaseModal/BaseModal.jsx";
 import UserSettingsForm from "../UserSettingsForm/UserSettingsForm.jsx";
 import s from "./UserSettingsModal.module.css";
@@ -9,6 +10,7 @@ const UserSettingsModal = ({ isOpen, onClose }) => {
         <h2>Setting</h2>
         <UserSettingsForm onClose={onClose} />
       </div>
+      <ToastContainer />
     </BaseModal>
   );
 };

@@ -30,6 +30,15 @@
   margin: 0;
 }
 
+.userSetWrap input:-webkit-autofill,
+.userSetWrap input:-webkit-autofill:hover,
+.userSetWrap input:-webkit-autofill:focus,
+.userSetWrap input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
 @media screen and (min-width: 768px) {
   .userSetWrap {
     max-width: 568px;

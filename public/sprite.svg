@@ -51,5 +51,12 @@
  <path fill="none" stroke="#323F47" style="stroke: var(--color1, #323F47)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M16 6.667v18.667"></path> 
  <path fill="none" stroke="#323F47" style="stroke: var(--color1, #323F47)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M6.667 16h18.667"></path>
 </symbol>
+<symbol id="chevron-left" viewBox="0 0 18 18">
+    <path d="M11.25 13.5L6.75 9L11.25 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="chevron-right" viewBox="0 0 18 18">
+    <path d="M6.75 13.5L11.25 9L6.75 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </defs>
 </svg>
