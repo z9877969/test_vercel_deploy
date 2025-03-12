@@ -1,11 +1,18 @@
+import { useState } from "react";
 import Calendar from "../Calendar/Calendar";
-import css from "./MonthInfo.module.css";
+import CalendarPagination from "../CalendarPagination/CalendarPagination";
+// import css from "./MonthInfo.module.css";
 
-const MonthInfo = () => {
+const MonthInfo = (waterData) => {
+  const [currentDate, setCurrentDate] = useState(new Date());
+
   return (
     <div>
-      <h2 className={css.header}>Month</h2>
-      <Calendar />
+      <CalendarPagination
+        currentDate={currentDate}
+        onChangeMonth={setCurrentDate}
+      />
+      <Calendar currentDate={currentDate} waterData={waterData} />
     </div>
   );
 };
