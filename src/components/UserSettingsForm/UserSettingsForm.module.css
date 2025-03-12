@@ -22,9 +22,6 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
-  line-height: 1.28571;
-  letter-spacing: -0.01em;
   margin-bottom: 20px;
   cursor: pointer;
 }
@@ -43,9 +40,6 @@
 
 .genderWrap {
   margin-top: 14px;
-  font-size: 14px;
-  line-height: 1.28;
-  letter-spacing: -0.01em;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -116,9 +110,6 @@
 
 .formulaSection {
   margin-bottom: 24px;
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.01em;
 }
 .formulaSection h3 {
   margin-bottom: 14px;
@@ -162,9 +153,6 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  font-size: 14px;
-  line-height: 1.28;
-  letter-spacing: -0.01em;
   margin-bottom: 24px;
 }
 
@@ -176,9 +164,6 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  font-size: 14px;
-  line-height: 1.28;
-  letter-spacing: -0.01em;
   margin-bottom: 14px;
 }
 
@@ -212,11 +197,6 @@
     height: 100px;
   }
 
-  .uploadBtn {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
   .uploadIcon {
     width: 20px;
     height: 20px;
@@ -227,19 +207,9 @@
     line-height: 1.33;
   }
 
-  .genderWrap {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
   .formInput {
     padding: 16px 16px;
     height: 56px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .formulaSection {
     font-size: 16px;
     line-height: 1.5;
   }
@@ -254,22 +224,14 @@
     height: 22px;
   }
 
-  .infoForFormula {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
   .wrapRecommend {
     flex-direction: row;
-    font-size: 16px;
-    line-height: 1.5;
   }
 
   .formBtn {
     padding: 16px 50px;
     width: 141px;
     height: 56px;
-
     font-size: 16px;
     line-height: 1.5;
   }
@@ -282,7 +244,7 @@
   }
 
   .partTwo {
-    margin-top: 85px;
+    margin-top: 88px;
   }
 
   .formInput,
