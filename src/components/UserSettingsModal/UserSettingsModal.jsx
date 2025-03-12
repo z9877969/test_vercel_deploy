@@ -5,8 +5,10 @@ import s from "./UserSettingsModal.module.css";
 const UserSettingsModal = ({ isOpen, onClose }) => {
   return (
     <BaseModal isOpen={isOpen} onClose={onClose}>
-      <h1>Setting</h1>
-      <UserSettingsForm onClose={onClose} />
+      <div className={s.userSetWrap}>
+        <h2>Setting</h2>
+        <UserSettingsForm onClose={onClose} />
+      </div>
     </BaseModal>
   );
 };

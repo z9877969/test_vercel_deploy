@@ -8,12 +8,13 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { updateUserProfile } from "../../redux/user/operations.js";
 import { useEffect, useState } from "react";
+import { PiExclamationMarkBold } from "react-icons/pi";
 
 const UserSettingsForm = ({ onClose }) => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const [preview, setPreview] = useState(
-    user.avatarUrl || "/public/img/auth.png"
+    user.avatarUrl || "/public/img/avatar.png"
   );
 
   const {
@@ -25,6 +26,7 @@ const UserSettingsForm = ({ onClose }) => {
     reset,
   } = useForm({
     resolver: yupResolver(userSettingsValidationSchema),
+    mode: "onChange",
     defaultValues: {
       name: "User",
       email: "",
@@ -41,7 +43,7 @@ const UserSettingsForm = ({ onClose }) => {
         ...user,
         dailyNorm: user.dailyNorm > 0 ? user.dailyNorm / 1000 : 1.5,
       });
-      setPreview(user.avatarUrl || "/public/img/auth.png");
+      setPreview(user.avatarUrl || "/public/img/avatar.png");
     }
   }, [user, reset]);
 
@@ -79,10 +81,10 @@ const UserSettingsForm = ({ onClose }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+      <div className={s.formIconWrap}>
         <label htmlFor="avatar">
-          <img src={preview || "/public/img/auth.png"} alt="Avatar" />
-          <div>
+          <img src={preview || "/public/img/avatar.png"} alt="Avatar" />
+          <div className={s.uploadBtn}>
             <svg className={s.uploadIcon} width="18" height="18">
               <use href="/sprite.svg#icon-upload" />
             </svg>
@@ -106,92 +108,140 @@ const UserSettingsForm = ({ onClose }) => {
             />
           )}
         />
-        {errors.avatar && <p>{errors.avatar.message}</p>}
+        {errors.avatar && (
+          <p className={s.formError}>{errors.avatar.message}</p>
+        )}
       </div>
+      <div className={s.wrapForDesktopOne}>
+        <div className={s.partOne}>
+          <fieldset>
+            <legend className={s.inputName}>Your gender identity</legend>
 
-      <div>
-        <fieldset>
-          <legend>Your gender identity</legend>
+            <Controller
+              name="gender"
+              control={control}
+              render={({ field }) => (
+                <div className={s.genderWrap}>
+                  <label className={s.genderLabel}>
+                    <input
+                      type="radio"
+                      {...field}
+                      value="woman"
+                      checked={field.value === "woman"}
+                    />
+                    <span className={s.customRadio}></span>
+                    Woman
+                  </label>
+                  <label className={s.genderLabel}>
+                    <input
+                      type="radio"
+                      {...field}
+                      value="man"
+                      checked={field.value === "man"}
+                    />
+                    <span className={s.customRadio}></span>
+                    Man
+                  </label>
+                </div>
+              )}
+            />
+          </fieldset>
+          {errors.gender && (
+            <p className={s.formError}>{errors.gender.message}</p>
+          )}
 
-          <Controller
-            name="gender"
-            control={control}
-            render={({ field }) => (
-              <div>
-                <label>
-                  <input
-                    type="radio"
-                    {...field}
-                    value="woman"
-                    checked={field.value === "woman"}
-                  />
-                  Woman
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    {...field}
-                    value="man"
-                    checked={field.value === "man"}
-                  />
-                  Man
-                </label>
-              </div>
+          <div className={s.wrapCredentials}>
+            <label htmlFor="name" className={s.inputName}>
+              Your name
+            </label>
+            <input
+              id="name"
+              {...register("name")}
+              type="text"
+              className={s.formInput}
+              style={{ marginBottom: "14px" }}
+            />
+            {errors.name && (
+              <p className={s.formError}>{errors.name.message}</p>
             )}
-          />
-        </fieldset>
-        {errors.gender && <p>{errors.gender.message}</p>}
-
-        <div>
-          <label htmlFor="name">Your name</label>
-          <input id="name" {...register("name")} type="text" />
-          {errors.name && <p className={s.error}>{errors.name.message}</p>}
-          <label htmlFor="email">Email</label>
-          <input id="email" {...register("email")} type="email" />
-          {errors.email && <p>{errors.email.message}</p>}
-        </div>
-        <section>
-          <h2>My daily norma</h2>
-
-          <p> For woman:</p>
-          <span>V = (M * 0.03) + (T * 0.4)</span>
-
-          <p>For man:</p>
-          <span>V = (M * 0.04) + (T * 0.6)</span>
-
-          <div>
-            <p>
-              <span>*</span>V is the volume of the water norm in liters per day,
-              M is your body weight, T is the time of active sports, or another
-              type of activity commensurate in terms of loads (in the absence of
-              these, you must set 0).
-            </p>
+            <label htmlFor="email" className={s.inputName}>
+              {" "}
+              Email
+            </label>
+            <input
+              id="email"
+              {...register("email")}
+              type="email"
+              className={s.formInput}
+            />
+            {errors.email && (
+              <p className={s.formError}>{errors.email.message}</p>
+            )}
           </div>
-          <div>
-            <p>Active time in hours</p>
-          </div>
-        </section>
+          <section className={s.formulaSection}>
+            <h3 className={s.inputName}>My daily norma</h3>
 
-        <div>
-          <label htmlFor="weight">Your weight in kilograms:</label>
-          <input id="weight" {...register("weight")} type="number" />
-          {errors.weight && <p>{errors.weight.message}</p>}
+            <div className={s.genderFormula}>
+              <div className={s.genderFormulaPart}>
+                <p>For woman:</p>
+                <span>V = (M * 0.03) + (T * 0.4)</span>
+              </div>
+              <div className={s.genderFormulaPart}>
+                <p>For man:</p>
+                <span>V = (M * 0.04) + (T * 0.6)</span>
+              </div>
+            </div>
 
-          <label htmlFor="dailySportTime">
-            The time of active participation in sports:
-          </label>
-
-          <input
-            id="dailySportTime"
-            {...register("dailySportTime")}
-            type="number"
-          />
-          {errors.dailySportTime && <p>{errors.dailySportTime.message}</p>}
+            <div className={s.wrapRule}>
+              <p>
+                <span>*</span> V is the volume of the water norm in liters per
+                day, M is your body weight, T is the time of active sports, or
+                another type of activity commensurate in terms of loads (in the
+                absence of these, you must set 0).
+              </p>
+            </div>
+            <div className={s.wrapExclamation}>
+              <PiExclamationMarkBold className={s.exclamation} />
+              <p>Active time in hours</p>
+            </div>
+          </section>
         </div>
-        <div>
-          <p>The required amount of water in liters per day:</p>
-          <span>{countDailyNorma()}</span>
-          <label htmlFor="dailyNorm">
+        <div className={s.partTwo}>
+          <div className={s.infoForFormula}>
+            <div>
+              <label htmlFor="weight">Your weight in kilograms:</label>
+              <input
+                id="weight"
+                {...register("weight")}
+                type="number"
+                className={s.formInput}
+              />
+              {errors.weight && (
+                <p className={s.formError}>{errors.weight.message}</p>
+              )}
+            </div>
+            <div>
+              <label htmlFor="dailySportTime">
+                The time of active participation in sports:
+              </label>
+
+              <input
+                id="dailySportTime"
+                {...register("dailySportTime")}
+                type="number"
+                className={s.formInput}
+              />
+              {errors.dailySportTime && (
+                <p className={s.formError}>{errors.dailySportTime.message}</p>
+              )}
+            </div>
+          </div>
+
+          <div className={s.wrapRecommend}>
+            <p>The required amount of water in liters per day:</p>
+            <span>{countDailyNorma()}</span>
+          </div>
+          <label htmlFor="dailyNorm" className={s.inputName}>
             Write down how much water you will drink:
           </label>
           <input
@@ -199,11 +249,16 @@ const UserSettingsForm = ({ onClose }) => {
             {...register("dailyNorm")}
             type="number"
             step="any"
+            className={s.formInput}
           />
-          {errors.dailyNorm && <p>{errors.dailyNorm.message}</p>}
+          {errors.dailyNorm && (
+            <p className={s.formError}>{errors.dailyNorm.message}</p>
+          )}
         </div>
       </div>
-      <button type="submit">Save</button>
+      <button type="submit" className={s.formBtn}>
+        Save
+      </button>
     </form>
   );
 };

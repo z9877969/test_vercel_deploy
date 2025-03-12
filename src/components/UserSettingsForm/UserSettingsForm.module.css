@@ -1,4 +1,258 @@
+.formIconWrap {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.formIconWrap input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.formIconWrap img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.uploadBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
 .uploadIcon {
   stroke: var(--main-text-color);
   fill: var(--main-white-color);
+}
+
+.inputName {
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.genderWrap {
+  margin-top: 14px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.genderLabel {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.genderLabel input[type="radio"] {
+  display: none;
+}
+
+.customRadio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.customRadio::after {
+  content: "";
+  width: 8.57px;
+  height: 8.57px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform;
+}
+
+.genderLabel input[type="radio"]:checked + .customRadio::after {
+  transform: scale(1);
+}
+
+.wrapCredentials {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.formInput {
+  margin-top: 8px;
+  display: block;
+  outline: none;
+  border: 1px solid rgba(47, 47, 47, 0.15);
+  border-radius: 15px;
+  padding: 16px 14px;
+  width: 100%;
+  height: 46px;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family);
+  transform: border-color 0.2s ease-in-out;
+}
+
+.formInput:hover,
+.formInput:active {
+  border-color: rgba(47, 47, 47, 0.4);
+}
+
+.formulaSection {
+  margin-bottom: 24px;
+}
+.formulaSection h3 {
+  margin-bottom: 14px;
+}
+
+.genderFormula {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.genderFormulaPart {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wrapRule {
+  margin-top: 14px;
+  margin-bottom: 14px;
+  color: rgba(47, 47, 47, 0.6);
+  border: 1px solid rgba(47, 47, 47, 0.15);
+  border-radius: 15px;
+  padding: 16px;
+  width: 100%;
+}
+
+.wrapExclamation {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.exclamation {
+  width: 18px;
+  height: 18px;
+
+  fill: var(--accent-color);
+}
+
+.infoForFormula {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.infoForFormula label {
+  margin-bottom: 8px;
+}
+
+.wrapRecommend {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.formBtn {
+  margin-top: 40px;
+  border-radius: 30px;
+  padding: 14px 40px;
+  width: 116px;
+  height: 46px;
+  background-color: var(--accent-color);
+  color: var(--grey-color);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  transform: background-color 0.2s ease-in-out;
+}
+.formBtn:hover {
+  background-color: #87d28d;
+}
+
+.formError {
+  color: #ef5050;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .formIconWrap img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .uploadIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .inputName {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+
+  .formInput {
+    padding: 16px 16px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .genderFormula {
+    flex-direction: row;
+    gap: 28px;
+  }
+
+  .exclamation {
+    width: 22px;
+    height: 22px;
+  }
+
+  .wrapRecommend {
+    flex-direction: row;
+  }
+
+  .formBtn {
+    padding: 16px 50px;
+    width: 141px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapForDesktopOne {
+    display: flex;
+    gap: 40px;
+  }
+
+  .partTwo {
+    margin-top: 88px;
+  }
+
+  .formInput,
+  .wrapRule {
+    width: 400px;
+  }
+
+  .formulaSection {
+    margin-bottom: 0;
+  }
 }
