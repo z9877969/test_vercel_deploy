@@ -61,9 +61,14 @@ const userSlice = createSlice({
         handleAuthState(state, "rejected", action)
       )
       .addCase(logIn.pending, (state) => handleAuthState(state, "pending"))
-      .addCase(logIn.fulfilled, (state, action) =>
-        handleAuthState(state, "fulfilled", action)
-      )
+      // .addCase(logIn.fulfilled, (state, action) =>
+      //   handleAuthState(state, "fulfilled", action)
+      // )
+      .addCase(logIn.fulfilled, (state, action) => {
+        state.token = action.payload.token;
+        state.userData = action.payload.user;
+        state.isLoggedIn = true;
+      })
       .addCase(logIn.rejected, (state, action) =>
         handleAuthState(state, "rejected", action)
       )
