@@ -9,8 +9,10 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
-    max-width: 400px;
     width: 100%;
+    height: 100%;
+    /* max-width: 400px;
+    width: 100%; */
     margin: auto;
     /* place-items: center; */
 }
@@ -56,6 +58,10 @@
 @media (min-width: 768px) {
     .container {
         height: 361;
+    }
+
+    .grid {
+        grid-template-columns: repeat(8, 1fr);
     }
 
     .day {

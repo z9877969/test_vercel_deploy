@@ -1,34 +1,29 @@
 .pagination {
     display: flex;
-    /* align-items: center; */
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%;
-    /* gap: 58px; */
-}
-
-.paginationBox {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 16px;
-    padding: 0;
-    margin-right: auto;
+    justify-content: space-between;
+    width: 100%;
+    /* padding: 10px; */
 }
 
 .headerMonth {
+    margin-right: auto;
     font-weight: 700;
     font-size: 20px;
     line-height: 120%;
     letter-spacing: -0.01em;
 }
 
-button {
-    padding: 0;
+.paginationBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    min-width: 120px;
 }
 
 .arrow {
+    flex-shrink: 0;
     background: none;
     border: none;
     width: 18px;
@@ -39,18 +34,22 @@ button {
     padding: 0;
 }
 
-.arrow:hover {
-    color: #9be1a0;
-}
-
 .currentMonth {
+    white-space: nowrap;
+    text-align: center;
+    flex-grow: 1;
     font-weight: 700;
     font-size: 14px;
     line-height: 129%;
     letter-spacing: -0.01em;
-    text-align: center;
-    white-space: nowrap;
-    margin-right: auto;
+}
+
+.chart {
+    margin-left: 10px;
+}
+
+.arrow:hover {
+    color: #9be1a0;
 }
 
 .icon {
@@ -58,7 +57,6 @@ button {
     height: 18px;
     stroke: var(--main-text-color);
     fill: none;
-    /* Колір іконки */
     transition: 0.3s;
 }
 
@@ -72,9 +70,14 @@ button {
 } */
 
 @media (min-width: 768px) {
-    .pagination {
-        /* justify-content: center; */
-        /* gap: 343px; */
+    .headerMonth {
+        font-size: 28px;
+        line-height: 114%;
+    }
+
+    .currentMonth {
+        font-size: 16px;
+        line-height: 150%;
     }
 
     .icon_chart {
@@ -83,8 +86,4 @@ button {
     }
 }
 
-@media (min-width: 1440px) {
-    .pagination {
-        /* gap: 311px; */
-    }
-}
+@media (min-width: 1440px) {}
