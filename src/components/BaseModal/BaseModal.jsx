@@ -1,3 +1,4 @@
+import React from "react";
 import css from "./BaseModal.module.css";
 import Modal from "react-modal";
 
@@ -12,6 +13,7 @@ export const BaseModal = ({ isOpen, onClose, children }) => {
       shouldCloseOnOverlayClick={true}
       shouldCloseOnEsc={true}
       overlayClassName={css.overlay}
+      ariaHideApp={true}
     >
       <button type="button" className={css.close} onClick={onClose}>
         <svg className={css.svgClose} aria-label="Close modal">
