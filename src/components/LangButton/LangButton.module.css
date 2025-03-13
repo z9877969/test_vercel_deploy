@@ -1,21 +1,23 @@
 .langSwitcher {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .langBtn {
-    background-color:var(--accent-color);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    
-  }
-  
-  .langBtn:hover {
-    background-color: #87d28d;
-  }
-  
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.langBtn {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.langBtn:hover {
+  background-color: #87d28d;
+}
