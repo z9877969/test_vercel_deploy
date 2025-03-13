@@ -19,19 +19,18 @@ const CalendarPagination = ({ currentDate, onChangeMonth }) => {
     );
     onChangeMonth(nextMonth);
   };
-  //   console.log(currentDate);
+  console.log(currentDate);
 
   return (
     <div className={css.pagination}>
-      <h2 className={css.headerMonth}>Month</h2>
-      <div className={css.paginationBox}>
-        <button className={css.arrow} onClick={handlePrevMonth}>
-          <svg className={css.icon}>
-            <use href="/sprite.svg#chevron-left"></use>
-          </svg>
-        </button>
-        <span className={css.currentMonth}>
-          {/* {currentDate.toLocaleString("en-US", {
+      <h2 className={css.header}>Month</h2>
+      <button className={css.arrow} onClick={handlePrevMonth}>
+        <svg className={css.icon}>
+          <use href="/sprite.svg#chevron-left"></use>
+        </svg>
+      </button>
+      <span>
+        {/* {currentDate.toLocaleString("en-US", {
           month: "long",
           year: "numeric",
         })} */}
@@ -50,7 +49,6 @@ const CalendarPagination = ({ currentDate, onChangeMonth }) => {
           <use href="/sprite.svg#icon-pie-chart"></use>
         </svg>
       </button>
-      {/* </div> */}
     </div>
   );
 };

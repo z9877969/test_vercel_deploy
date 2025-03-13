@@ -2,7 +2,6 @@
     margin-top: 24px;
     text-align: center;
     font-family: Arial, sans-serif;
-    width: 100%;
 }
 
 .grid {
@@ -22,13 +21,10 @@
     place-items: center;
     border: none;
     border-radius: 30px;
-    /* padding: 5px 10px; */
     width: 28px;
     height: 28px;
     font-weight: 700;
     font-size: 14px;
-    line-height: 129%;
-    letter-spacing: -0.01em;
     background: rgba(50, 63, 71, 0.2);
     cursor: pointer;
     /* transition: 0.3s; */
