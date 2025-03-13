@@ -1,28 +1,56 @@
 .pagination {
     display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    /* gap: 58px; */
+}
+
+.paginationBox {
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 15px;
+    flex-direction: row;
+    gap: 16px;
+    padding: 0;
+    margin-right: auto;
+}
+
+.headerMonth {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+}
+
+button {
+    padding: 0;
 }
 
 .arrow {
     background: none;
     border: none;
-    font-size: 24px;
+    width: 18px;
+    height: 18px;
     cursor: pointer;
     color: #333;
     transition: 0.3s;
+    padding: 0;
 }
 
 .arrow:hover {
     color: #9be1a0;
 }
 
-.month-year {
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: capitalize;
+.currentMonth {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    white-space: nowrap;
+    margin-right: auto;
 }
 
 .icon {
@@ -37,4 +65,26 @@
 .icon_chart {
     width: 20px;
     height: 20px;
+}
+
+/* @media (min-width: 375px) {
+
+} */
+
+@media (min-width: 768px) {
+    .pagination {
+        /* justify-content: center; */
+        /* gap: 343px; */
+    }
+
+    .icon_chart {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .pagination {
+        /* gap: 311px; */
+    }
 }

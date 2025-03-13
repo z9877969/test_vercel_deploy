@@ -2,6 +2,7 @@
     margin-top: 24px;
     text-align: center;
     font-family: Arial, sans-serif;
+    width: 100%;
 }
 
 .grid {
@@ -9,6 +10,7 @@
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
     max-width: 400px;
+    width: 100%;
     margin: auto;
     /* place-items: center; */
 }
@@ -18,10 +20,13 @@
     place-items: center;
     border: none;
     border-radius: 30px;
+    /* padding: 5px 10px; */
     width: 28px;
     height: 28px;
     font-weight: 700;
     font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.01em;
     background: rgba(50, 63, 71, 0.2);
     cursor: pointer;
     /* transition: 0.3s; */
@@ -42,4 +47,29 @@
 .water-percent {
     font-size: 12px;
     margin-top: 5px;
+}
+
+/* @media (min-width: 375px) {
+
+} */
+
+@media (min-width: 768px) {
+    .container {
+        height: 361;
+    }
+
+    .day {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        line-height: 150%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        height: 305px;
+    }
+
+    .day {}
 }
