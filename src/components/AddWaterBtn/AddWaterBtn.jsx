@@ -1,16 +1,16 @@
-import React from "react";
-import style from "./AddWaterBtn.module.css";
+import css from "./AddWaterBtn.module.css";
+import sprite from "../../../public/sprite.svg";
 
 const AddWaterBtn = ({ onClick }) => {
   return (
-    <div className={style.container}>
-      <button onClick={onClick} className={style.btn}>
-        <svg className={style.iconPlus}>
-          <use xlinkHref="/sprite.svg#icon-plus"></use>
+    <button onClick={onClick} className={css.btn}>
+      <div className={css.wrapper}>
+        <svg width="30" height="30" className={css.icon}>
+          <use href={`${sprite}#icon-plus-bl`} />
         </svg>
-        <p className={style.btnText}>Add water</p>
-      </button>
-    </div>
+        <p> Add water</p>
+      </div>
+    </button>
   );
 };
 

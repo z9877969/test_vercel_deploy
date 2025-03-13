@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo.jsx";
 import s from "./WelcomeSection.module.css";
+import { useTranslation } from "react-i18next"; //і сюди
 
 const WelcomeSection = () => {
+  const { t } = useTranslation();  //добавте цей хук в свій компонент 
   return (
     <div className={s.welcomeSection}>
       <Logo />
-      <p className={s.welcomeText}>Record daily water intake and track</p>
-      <h1 className={s.welcomeTitle}>Water consumption tracker</h1>
+      <p className={s.welcomeText}>{t("welcomeSection.welcomeText")}</p> 
+      <h1 className={s.welcomeTitle}>{t("welcomeSection.welcomeTitle")}</h1>
       <nav className={s.welcomeBtn}>
         <Link to="/signup" className={s.btnTracker}>
-          Try tracker
+        {t("welcomeSection.tryTracker")}
         </Link>
         <Link to="/signin" className={s.btnSignIn}>
-          Sign In
+        {t("welcomeSection.signIn")}
         </Link>
       </nav>
     </div>

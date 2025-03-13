@@ -1,10 +1,11 @@
 import React from "react";
 import { useState, useEffect, useMemo } from "react";
-// import ChooseDate from "../ChooseDate/ChooseDate";
+import ChooseDate from "../ChooseDate/ChooseDate";
 import AddWaterBtn from "../AddWaterBtn/AddWaterBtn";
 import WaterList from "../WaterList/WaterList";
 import styles from "./DailyInfo.module.css";
 import { useDispatch, useSelector } from "react-redux";
+import { getWaterPerDay } from "../../redux/filters/operations";
 
 const formatDate = (date) => {
   const year = date.getFullYear();
@@ -31,12 +32,12 @@ const DailyInfo = ({ chosenDate }) => {
 
   return (
     <section className={styles.dailyInfo}>
-      <div className={styles.todaySection}>
-        <h3>Today</h3>
+      <div className={styles.wrapper}>
+        <h3 className={styles.today}>Today</h3>
         <AddWaterBtn />
       </div>{" "}
       <WaterList />
-      {/* <ChooseDate /> */}
+      <ChooseDate />
     </section>
   );
 };

@@ -1,14 +1,19 @@
+.container {
+  margin: 0 auto;
+  padding: 16px;
+}
 .box {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 126px;
   width: 100%;
   border-radius: 30px;
   background-color: var(--background-color);
-
   padding: 16px;
   padding-top: 24px;
+}
+.advantagesSection {
+  display: none;
 }
 @media (max-width: 374px) {
   .container {
@@ -22,15 +27,35 @@
 }
 @media (min-width: 768px) and (max-width: 1439px) {
   .container {
-    width: 704px;
     padding: 32px;
   }
 }
 
 @media (min-width: 1440px) {
   .container {
-    width: 672px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 32px;
+    /* width: 672px; */
     padding: 32px;
+    width: 100%;
+  }
+  .box {
     gap: 0;
+  }
+  .advantagesSection {
+    display: flex;
+  }
+  .signUpWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+  }
+
+  .box {
+    width: 672px;
   }
 }

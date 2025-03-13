@@ -75,6 +75,9 @@ section {
     gap: 0px;
     margin: 0;
   }
+  body {
+    overflow: hidden;
+  }
 }
 
 /* reset styles */

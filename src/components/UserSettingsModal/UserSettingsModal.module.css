@@ -1,3 +1,59 @@
-.modalIconClose {
-  stroke: var(--main-text-color);
+.userSetWrap {
+  max-width: 303px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+}
+
+.userSetWrap span {
+  color: var(--accent-color);
+  font-weight: var(--font-weight-bold);
+}
+
+.userSetWrap h2 {
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.userSetWrap input {
+  -moz-appearance: textfield;
+}
+
+.userSetWrap input::-webkit-inner-spin-button,
+.userSetWrap input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.userSetWrap input:-webkit-autofill,
+.userSetWrap input:-webkit-autofill:hover,
+.userSetWrap input:-webkit-autofill:focus,
+.userSetWrap input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+@media screen and (min-width: 768px) {
+  .userSetWrap {
+    max-width: 568px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .userSetWrap h2 {
+    font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .userSetWrap {
+    max-width: 840px;
+  }
 }
