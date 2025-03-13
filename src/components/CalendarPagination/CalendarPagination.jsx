@@ -43,7 +43,8 @@ const CalendarPagination = ({ currentDate, onChangeMonth }) => {
           <use href="/sprite.svg#chevron-right"></use>
         </svg>
       </button>
-      <button className={css.chhart}>
+      {/* </div> */}
+      <button className={css.chart}>
         <svg className={css.icon_chart}>
           <use href="/sprite.svg#icon-pie-chart"></use>
         </svg>

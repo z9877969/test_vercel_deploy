@@ -10,6 +10,14 @@
   height: 100vh;
 }
 
+.trackerPage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 @media (min-width: 375px) {
   .trackerPageWrapper {
     max-width: 375px;
@@ -23,11 +31,22 @@
   }
 }
 
-@media (min-width: 1440px) {
-  .trackerPageWrapper {
-    max-width: 1440px;
+@media only screen and (min-width: 1440px) {
+  .trackerPage {
     flex-direction: row;
     gap: 32px;
     padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    /* min-height: 100vh; */
+  }
+
+  .trackerPageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 1440px;
   }
 }
