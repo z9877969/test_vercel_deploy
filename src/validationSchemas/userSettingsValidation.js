@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-export const userSettingsValidationSchema = Yup.object({
+export const userSettingsValidationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Too short! Min 2").max(12, "Too long! Max 12"),
   email: Yup.string()
     .email("Enter a valid email")

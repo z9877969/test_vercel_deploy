@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-export const signUpValidationSchema = Yup.object({
+export const signUpValidationSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email address")
     .matches(
@@ -19,7 +19,7 @@ export const signUpValidationSchema = Yup.object({
     .required("Please repeat your password"),
 });
 
-export const signInValidationSchema = Yup.object({
+export const signInValidationSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email address")
     .matches(

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import WaterMainInfo from "../../components/WaterMainInfo/WaterMainInfo";
 import WaterDetailedInfo from "../../components/WaterDetailedInfo/WaterDetailedInfo";
 import css from "./TrackerPage.module.css";
@@ -13,8 +13,10 @@ const TrackerPage = () => {
   // };
   return (
     <div className={css.trackerPageWrapper}>
-      <WaterMainInfo />
-      <WaterDetailedInfo />
+      <div className={css.trackerPage}>
+        <WaterMainInfo />
+        <WaterDetailedInfo />
+      </div>
     </div>
   );
 };
