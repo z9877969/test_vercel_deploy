@@ -34,16 +34,16 @@ const CalendarPagination = ({ currentDate, onChangeMonth }) => {
           month: "long",
           year: "numeric",
         })} */}
-          {`${new Intl.DateTimeFormat("en-US", { month: "long" }).format(
-            currentDate
-          )}, ${currentDate.getFullYear()}`}
-        </span>
-        <button className={css.arrow} onClick={handleNextMonth}>
-          <svg className={css.icon}>
-            <use href="/sprite.svg#chevron-right"></use>
-          </svg>
-        </button>
-      </div>
+        {`${new Intl.DateTimeFormat("en-US", { month: "long" }).format(
+          currentDate
+        )}, ${currentDate.getFullYear()}`}
+      </span>
+      <button className={css.arrow} onClick={handleNextMonth}>
+        <svg className={css.icon}>
+          <use href="/sprite.svg#chevron-right"></use>
+        </svg>
+      </button>
+      {/* </div> */}
       <button className={css.chart}>
         <svg className={css.icon_chart}>
           <use href="/sprite.svg#icon-pie-chart"></use>
