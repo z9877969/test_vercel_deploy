@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setWaterData,
@@ -10,16 +10,16 @@ import {
 } from "../../redux/water/operations.js";
 import css from "./WaterForm.module.css";
 
-const schema = yup.object().shape({
-  amount: yup
-    .number()
-    .required("Кількість води обовʼязкова")
-    .min(1, "Мінімум 1 мл"),
-  time: yup
-    .string()
-    .required("Час обовʼязковий")
-    .matches(/^\d{2}:\d{2}$/, "Формат час y: hh:mm"),
-});
+// const schema = yup.object().shape({
+//   amount: yup
+//     .number()
+//     .required("Кількість води обовʼязкова")
+//     .min(1, "Мінімум 1 мл"),
+//   time: yup
+//     .string()
+//     .required("Час обовʼязковий")
+//     .matches(/^\d{2}:\d{2}$/, "Формат час y: hh:mm"),
+// });
 
 const WaterForm = ({ operationType, onClose }) => {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const WaterForm = ({ operationType, onClose }) => {
     (state) => state.user.userData
   );
   const { control, handleSubmit, setValue, watch } = useForm({
-    resolver: yupResolver(schema),
+    // resolver: yupResolver(schema),
     defaultValues: {
       amount: waterData?.amount || 50,
       time:

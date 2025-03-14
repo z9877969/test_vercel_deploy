@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import s from "./UserSettingsForm.module.css";
 import { selectUser } from "../../redux/user/selectors.js";
-import { userSettingsValidationSchema } from "../../validationSchemas/userSettingsValidation.js";
-import { yupResolver } from "@hookform/resolvers/yup";
+// import { userSettingsValidationSchema } from "../../validationSchemas/userSettingsValidation.js";
+// import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,7 +26,7 @@ const UserSettingsForm = ({ onClose }) => {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(userSettingsValidationSchema),
+    // resolver: yupResolver(userSettingsValidationSchema),
     mode: "onChange",
     defaultValues: {
       name: user.name,
