@@ -5,8 +5,13 @@ export default defineConfig({
   plugins: [react()],
   build: {
     sourcemap: true,
-  },
-  optimizeDeps: {
-    exclude: ["yup"],
+    rollupOptions: {
+      external: ["yup"],
+      output: {
+        globals: {
+          yup: "yup",
+        },
+      },
+    },
   },
 });
