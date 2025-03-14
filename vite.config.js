@@ -7,6 +7,6 @@ export default defineConfig({
     sourcemap: true,
   },
   optimizeDeps: {
-    include: ["yup"],
+    exclude: ["yup"],
   },
 });
