@@ -2,6 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { resetPasswordValidationSchema } from "../../validationSchemas/authValidation.js";
+import { AuthFormContainer } from "../SignUpForm/SignUpForm.jsx";
 
 const PasswordResetForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -23,7 +24,11 @@ const PasswordResetForm = () => {
     mode: "onChange",
     defaultValues: { password: "", repeatPassword: "" },
   });
-  return <div></div>;
+  return (
+    <div>
+      <AuthFormContainer></AuthFormContainer>
+    </div>
+  );
 };
 
 export default PasswordResetForm;
