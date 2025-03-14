@@ -24,9 +24,7 @@
 
 @media (min-width: 768px) {
     .wrapper {
-        padding: 32px 32px 64px;
-        /* background-size: 374px 477px;
-        background-position: center top 69px; */
+        padding: 32px 32px 35px;
     }
 
 }
@@ -39,9 +37,8 @@
     .wrapper {
         width: 672px;
         height: 736px;
-        /* background-size: 472px 604px;
-        background-position: center top 92px; */
         position: relative;
+        padding-bottom: 33px;
     }
 
 }
