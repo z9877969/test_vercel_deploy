@@ -58,5 +58,15 @@
   <symbol id="chevron-right" viewBox="0 0 18 18">
     <path d="M6.75 13.5L11.25 9L6.75 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+<symbol id="icon-circle-minus" viewBox="0 0 32 32">
+<path fill="none" stroke="#323f47" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.1163" d="M16 0.558c8.528 0 15.442 6.914 15.442 15.442s-6.914 15.442-15.442 15.442c-8.528 0-15.442-6.914-15.442-15.442s6.914-15.442 15.442-15.442z"></path>
+<path fill="none" stroke="#323f47" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3395" d="M10.286 16h11.429"></path>
+</symbol>
+<symbol id="icon-circle-plus" viewBox="0 0 32 32">
+<path fill="none" stroke="#323f47" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.1163" d="M16 0.558c8.528 0 15.442 6.914 15.442 15.442s-6.914 15.442-15.442 15.442c-8.528 0-15.442-6.914-15.442-15.442s6.914-15.442 15.442-15.442z"></path>
+<path fill="none" stroke="#323f47" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3395" d="M16 10.286v11.429"></path>
+<path fill="none" stroke="#323f47" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3395" d="M10.286 16h11.429"></path>
+</symbol>
+
 </defs>
 </svg>
